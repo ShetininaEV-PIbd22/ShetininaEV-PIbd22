@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsAppNasta
+namespace WindowsFormAvianos
 {
     public partial class FormAvianos : Form
     {

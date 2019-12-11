@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsAppNasta
+﻿namespace WindowsFormAvianos
 {
     partial class FormAvianos
     {
