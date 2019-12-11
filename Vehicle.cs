@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormAvianos
 {
-    public abstract class Vehicle : ITransport
+    public abstract class Vehicle: ITransport
     {
         // Левая координата отрисовки автомобиля
         protected float _startPosX;
@@ -34,3 +34,4 @@ namespace WindowsFormAvianos
         public abstract void MoveTransport(Direction direction);
     }
 }
+

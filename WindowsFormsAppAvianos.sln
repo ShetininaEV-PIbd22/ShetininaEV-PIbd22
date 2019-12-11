@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29326.143
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAvianos", "WindowsFormsAvianos.csproj", "{7EBE2CF5-857E-4CBF-91F8-9BFC6CA517D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAvianos", "WindowsFormsAvianos.csproj", "{6EFE7526-4A80-43BB-9D9D-851B5C293E6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7EBE2CF5-857E-4CBF-91F8-9BFC6CA517D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EBE2CF5-857E-4CBF-91F8-9BFC6CA517D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EBE2CF5-857E-4CBF-91F8-9BFC6CA517D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EBE2CF5-857E-4CBF-91F8-9BFC6CA517D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFE7526-4A80-43BB-9D9D-851B5C293E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFE7526-4A80-43BB-9D9D-851B5C293E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFE7526-4A80-43BB-9D9D-851B5C293E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFE7526-4A80-43BB-9D9D-851B5C293E6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {74D0B709-FDD2-4126-BF0A-9DB7564B7E21}
+		SolutionGuid = {74D03A25-B05E-4C4C-A010-B47442D0C3FE}
 	EndGlobalSection
 EndGlobal

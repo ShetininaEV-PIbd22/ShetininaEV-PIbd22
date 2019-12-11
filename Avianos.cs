@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormAvianos
 {
-    public class Avianos: Shep
+    class Avianos: Shep
     {
         public Color DopColor { private set; get; }
         // Признак наличия переднего лифтов
@@ -18,13 +18,13 @@ namespace WindowsFormAvianos
         public bool Rubka { private set; get; }
         // Дополнительный цвет
         public Color DopColor_1 { private set; get; }
-        // Признак наличия ор
+        // Признак наличия орудия
         public bool Orudie { private set; get; }
         // признак разметки
         public bool Razmetka { private set; get; }
         // Конструктор
-        public Avianos(int maxSpeed, float weight, Color mainColor, Color dopColor, bool firstLift, bool secondLift, bool rubka, Color dopColor_1, bool orudie, bool razmetka) :
-            base(maxSpeed,  weight, mainColor)
+        public Avianos (int maxSpeed, float weight, Color mainColor, Color dopColor, bool firstLift, bool secondLift, bool rubka, Color dopColor_1, bool orudie, bool razmetka) :
+            base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
             FirstLift = firstLift;
@@ -51,16 +51,15 @@ namespace WindowsFormAvianos
                 g.FillRectangle(spoiler, _startPosX + 30, _startPosY + 25, 5, 5);
             }
             Brush spoiler_1 = new SolidBrush(DopColor_1);
-            Pen pen = new Pen(DopColor_1); 
+            Pen pen = new Pen(DopColor_1);
             if (Orudie)
             {
-               g.FillRectangle(spoiler_1, _startPosX + 62, _startPosY + 12, 3, 3);
+                g.FillRectangle(spoiler_1, _startPosX + 62, _startPosY + 12, 3, 3);
             }
             if (Razmetka)
             {
                 g.DrawLine(pen, _startPosX + 20, _startPosY + 15, _startPosX + 40, _startPosY + 15);
             }
         }
-
     }
 }

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("WindowsFormAvianos_2.1")]
+[assembly: AssemblyTitle("TP_laba3(new)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormAvianos_2.1")]
+[assembly: AssemblyProduct("TP_laba3(new)")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("66a1820f-b941-4173-8f03-ce2f40e3d092")]
+[assembly: Guid("6efe7526-4a80-43bb-9d9d-851b5c293e6d")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

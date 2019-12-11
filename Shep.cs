@@ -10,11 +10,14 @@ namespace WindowsFormAvianos
     public enum Direction
     {
         Up,
+
         Down,
+
         Left,
+
         Right
     }
-    public class Shep : Vehicle
+    class Shep : Vehicle
     {
         /// Ширина отрисовки автомобиля
         protected const int shepWidth = 100;
@@ -22,11 +25,12 @@ namespace WindowsFormAvianos
         protected const int shepHeight = 60;
         // Дополнительный цвет
         public Color MainColor { private set; get; }
+        
         /// Конструктор
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес автомобиля</param>
         /// <param name="mainColor">Основной цвет кузова</param>
-        public Shep(int maxSpeed, float weight, Color mainColor)
+        public Shep (int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;

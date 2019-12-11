@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66A1820F-B941-4173-8F03-CE2F40E3D092}</ProjectGuid>
+    <ProjectGuid>{6EFE7526-4A80-43BB-9D9D-851B5C293E6D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormAvianos_2._1</RootNamespace>
-    <AssemblyName>WindowsFormAvianos_2.1</AssemblyName>
+    <RootNamespace>TP_laba3_new_</RootNamespace>
+    <AssemblyName>TP_laba3%28new%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,20 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Shep.cs" />
     <Compile Include="Avianos.cs" />
-    <Compile Include="Vehicle.cs" />
-    <Compile Include="FormAvianos.cs">
+    <Compile Include="FormParking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAvianos.Designer.cs">
-      <DependentUpon>FormAvianos.cs</DependentUpon>
+    <Compile Include="FormParking.Designer.cs">
+      <DependentUpon>FormParking.cs</DependentUpon>
     </Compile>
     <Compile Include="ITransport.cs" />
+    <Compile Include="Parking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAvianos.resx">
-      <DependentUpon>FormAvianos.cs</DependentUpon>
+    <Compile Include="Shep.cs" />
+    <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="FormParking.resx">
+      <DependentUpon>FormParking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
