@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsAppNasta.Properties
+namespace WindowsFormAvianos_2._1.Properties
 {
 
 

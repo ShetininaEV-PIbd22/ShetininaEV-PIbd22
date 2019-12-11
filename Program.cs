@@ -6,17 +6,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormAvianos
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAvianos());
+            Application.Run(new FormAvianosec());
         }
     }
 }

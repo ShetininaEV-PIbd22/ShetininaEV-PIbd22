@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("WindowsFormsAppNasta")]
+[assembly: AssemblyTitle("WindowsFormAvianos_2.1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormsAppNasta")]
+[assembly: AssemblyProduct("WindowsFormAvianos_2.1")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("7ebe2cf5-857e-4cbf-91f8-9bfc6ca517d6")]
+[assembly: Guid("66a1820f-b941-4173-8f03-ce2f40e3d092")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

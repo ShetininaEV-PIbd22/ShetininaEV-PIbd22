@@ -10,29 +10,35 @@ using System.Windows.Forms;
 
 namespace WindowsFormAvianos
 {
-    public partial class FormAvianos : Form
+    public partial class FormAvianosec : Form
     {
-        private Aviaos motorShip;
-        public FormAvianos()
+        private ITransport _ship;
+        public FormAvianosec()
         {
             InitializeComponent();
         }
         private void Draw()
         {
-            Bitmap bmp = new Bitmap(pictureBoxCars.Width, pictureBoxCars.Height);
+            Bitmap bmp = new Bitmap(pictureBoxAvianos.Width, pictureBoxAvianos.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            motorShip.DrawShep(gr);
-            pictureBoxCars.Image = bmp;
+            _ship.DrawShep(gr);
+            pictureBoxAvianos.Image = bmp;
         }
-        /// Обработка нажатия кнопки "Создать"
-        private void buttonCreate_Click(object sender, EventArgs e)
+        
+        private void CreateShep_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            motorShip = new Aviaos(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true, true, true, true, true);
-            motorShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxCars.Width, pictureBoxCars.Height);
+            _ship = new Shep(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
+            _ship.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxAvianos.Width, pictureBoxAvianos.Height);
             Draw();
         }
-        /// Обработка нажатия кнопок управления
+        private void CreateAvianos_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            _ship = new Avianos(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true, true, Color.Black, true, true);
+            _ship.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxAvianos.Width, pictureBoxAvianos.Height);
+            Draw();
+        }
         private void buttonMove_Click(object sender, EventArgs e)
         {
             //получаем имя кнопки
@@ -40,16 +46,16 @@ namespace WindowsFormAvianos
             switch (name)
             {
                 case "buttonUp":
-                    motorShip.MoveTransport(Direction.Up);
+                    _ship.MoveTransport(Direction.Up);
                     break;
                 case "buttonDown":
-                    motorShip.MoveTransport(Direction.Down);
+                    _ship.MoveTransport(Direction.Down);
                     break;
                 case "buttonLeft":
-                    motorShip.MoveTransport(Direction.Left);
+                    _ship.MoveTransport(Direction.Left);
                     break;
                 case "buttonRight":
-                    motorShip.MoveTransport(Direction.Right);
+                    _ship.MoveTransport(Direction.Right);
                     break;
             }
             Draw();

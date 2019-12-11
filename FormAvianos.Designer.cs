@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormAvianos
 {
-    partial class FormAvianos
+    partial class FormAvianosec
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,160 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvianos));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBoxCars = new System.Windows.Forms.PictureBox();
-            this.Create = new System.Windows.Forms.Button();
-            this.buttonUp = new System.Windows.Forms.Button();
-            this.buttonLeft = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvianosec));
+            this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
+            this.CreateShep = new System.Windows.Forms.Button();
+            this.CreateAvianos = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
+            this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).BeginInit();
+            this.buttonLeft = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // pictureBoxAvianos
             // 
-            this.button2.Location = new System.Drawing.Point(659, 425);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonMove_Click);
+            this.pictureBoxAvianos.Location = new System.Drawing.Point(0, -1);
+            this.pictureBoxAvianos.Name = "pictureBoxAvianos";
+            this.pictureBoxAvianos.Size = new System.Drawing.Size(799, 452);
+            this.pictureBoxAvianos.TabIndex = 0;
+            this.pictureBoxAvianos.TabStop = false;
             // 
-            // button3
+            // CreateShep
             // 
-            this.button3.Location = new System.Drawing.Point(598, 396);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonMove_Click);
+            this.CreateShep.Location = new System.Drawing.Point(0, -1);
+            this.CreateShep.Name = "CreateShep";
+            this.CreateShep.Size = new System.Drawing.Size(75, 23);
+            this.CreateShep.TabIndex = 1;
+            this.CreateShep.Text = "Корабль";
+            this.CreateShep.UseVisualStyleBackColor = true;
+            this.CreateShep.Click += new System.EventHandler(this.CreateShep_Click);
             // 
-            // button4
+            // CreateAvianos
             // 
-            this.button4.Location = new System.Drawing.Point(724, 396);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.buttonMove_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(659, 367);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.buttonMove_Click);
-            // 
-            // pictureBoxCars
-            // 
-            this.pictureBoxCars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCars.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCars.Name = "pictureBoxCars";
-            this.pictureBoxCars.Size = new System.Drawing.Size(884, 461);
-            this.pictureBoxCars.TabIndex = 5;
-            this.pictureBoxCars.TabStop = false;
-            // 
-            // Create
-            // 
-            this.Create.Location = new System.Drawing.Point(0, 0);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(75, 23);
-            this.Create.TabIndex = 6;
-            this.Create.Text = "Create";
-            this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.buttonCreate_Click);
-            // 
-            // buttonUp
-            // 
-            this.buttonUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
-            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(816, 272);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(30, 30);
-            this.buttonUp.TabIndex = 7;
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonMove_Click);
-            // 
-            // buttonLeft
-            // 
-            this.buttonLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLeft.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
-            this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonLeft.Location = new System.Drawing.Point(790, 308);
-            this.buttonLeft.Name = "buttonLeft";
-            this.buttonLeft.Size = new System.Drawing.Size(30, 30);
-            this.buttonLeft.TabIndex = 8;
-            this.buttonLeft.UseVisualStyleBackColor = false;
-            this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
+            this.CreateAvianos.Location = new System.Drawing.Point(95, -1);
+            this.CreateAvianos.Name = "CreateAvianos";
+            this.CreateAvianos.Size = new System.Drawing.Size(75, 23);
+            this.CreateAvianos.TabIndex = 2;
+            this.CreateAvianos.Text = "Авианосец";
+            this.CreateAvianos.UseVisualStyleBackColor = true;
+            this.CreateAvianos.Click += new System.EventHandler(this.CreateAvianos_Click);
             // 
             // buttonRight
             // 
-            this.buttonRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRight.BackgroundImage")));
             this.buttonRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonRight.Location = new System.Drawing.Point(842, 308);
+            this.buttonRight.Location = new System.Drawing.Point(758, 386);
             this.buttonRight.Name = "buttonRight";
             this.buttonRight.Size = new System.Drawing.Size(30, 30);
-            this.buttonRight.TabIndex = 9;
+            this.buttonRight.TabIndex = 3;
             this.buttonRight.UseVisualStyleBackColor = true;
             this.buttonRight.Click += new System.EventHandler(this.buttonMove_Click);
             // 
+            // buttonUp
+            // 
+            this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
+            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUp.Location = new System.Drawing.Point(734, 359);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(30, 30);
+            this.buttonUp.TabIndex = 4;
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonMove_Click);
+            // 
             // buttonDown
             // 
-            this.buttonDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDown.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(816, 331);
+            this.buttonDown.Location = new System.Drawing.Point(734, 421);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(30, 30);
-            this.buttonDown.TabIndex = 10;
-            this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.TabIndex = 5;
+            this.buttonDown.UseVisualStyleBackColor = false;
             this.buttonDown.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // FormAvianos
+            // buttonLeft
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.buttonDown);
-            this.Controls.Add(this.buttonRight);
+            this.buttonLeft.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
+            this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLeft.Location = new System.Drawing.Point(708, 386);
+            this.buttonLeft.Name = "buttonLeft";
+            this.buttonLeft.Size = new System.Drawing.Size(30, 30);
+            this.buttonLeft.TabIndex = 6;
+            this.buttonLeft.UseVisualStyleBackColor = false;
+            this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
+            // 
+            // FormAvianosec
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonLeft);
+            this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.Create);
-            this.Controls.Add(this.pictureBoxCars);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Name = "FormAvianos";
-            this.Text = "Avianosec";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).EndInit();
+            this.Controls.Add(this.buttonRight);
+            this.Controls.Add(this.CreateAvianos);
+            this.Controls.Add(this.CreateShep);
+            this.Controls.Add(this.pictureBoxAvianos);
+            this.Name = "FormAvianosec";
+            this.Text = "Avianos";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBoxCars;
-        private System.Windows.Forms.Button Create;
-        private System.Windows.Forms.Button buttonUp;
-        private System.Windows.Forms.Button buttonLeft;
+
+        private System.Windows.Forms.PictureBox pictureBoxAvianos;
+        private System.Windows.Forms.Button CreateShep;
+        private System.Windows.Forms.Button CreateAvianos;
         private System.Windows.Forms.Button buttonRight;
+        private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
+        private System.Windows.Forms.Button buttonLeft;
     }
 }
 
