@@ -16,7 +16,7 @@ namespace WindowsFormAvianos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAvianos());
+            Application.Run(new FormParking());
         }
     }
 }
