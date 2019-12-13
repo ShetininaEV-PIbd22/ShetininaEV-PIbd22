@@ -30,6 +30,15 @@ namespace WindowsFormAvianos
             _pictureWidth = width;
             _pictureHeight = height;
         }
+        public void SetMainColor(Color color)
+        {
+            MainColor = color;
+            Console.WriteLine("Ship main color: " + MainColor.Name);
+        }
+        public String GetMainColor()
+        {
+            return MainColor.Name;
+        }
         public abstract void DrawShep(Graphics g);
         public abstract void MoveTransport(Direction direction);
     }

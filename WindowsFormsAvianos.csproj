@@ -53,6 +53,12 @@
       <DependentUpon>FormParking.cs</DependentUpon>
     </Compile>
     <Compile Include="Avianos.cs" />
+    <Compile Include="FormShepConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShepConfig.Designer.cs">
+      <DependentUpon>FormShepConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="ITransport.cs" />
     <Compile Include="MultiLevelParking.cs" />
     <Compile Include="Parking.cs" />
