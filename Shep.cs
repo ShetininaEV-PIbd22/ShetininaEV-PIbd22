@@ -14,21 +14,34 @@ namespace WindowsFormAvianos
         Left,
         Right
     }
-    public class Shep : Vehicle
+    class Shep : Vehicle
     {
         /// Ширина отрисовки автомобиля
         protected const int shepWidth = 100;
         /// Ширина отрисовки автомобиля
         protected const int shepHeight = 60;
+        
         /// Конструктор
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес автомобиля</param>
         /// <param name="mainColor">Основной цвет кузова</param>
-        public Shep(int maxSpeed, float weight, Color mainColor)
+        public Shep (int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+        }
+        // Конструктор
+        //info-Информация по объекту
+        public Shep(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
         }
         public override void MoveTransport(Direction direction)
         {
@@ -78,6 +91,10 @@ namespace WindowsFormAvianos
             g.DrawLine(pen, _startPosX, _startPosY + 5, _startPosX - 10, _startPosY + 10);
             g.DrawLine(pen, _startPosX - 10, _startPosY + 10, _startPosX - 10, _startPosY + 20);
             g.DrawLine(pen, _startPosX - 10, _startPosY + 20, _startPosX, _startPosY + 25);
+        }
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
     }
 }

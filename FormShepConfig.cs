@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormAvianos
 {
-    public partial class FormShepConfig : Form
+    public partial class FormCarConfig : Form
     {
         ITransport shep = null;
         private event shepDelegate eventAddShep;
-        public FormShepConfig()
+        public FormCarConfig()
         {
             InitializeComponent();
+            
             buttonnCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
-
+        
         private void DrawShep()
         {
             if (shep != null)
@@ -91,7 +92,7 @@ namespace WindowsFormAvianos
         {
             if (shep != null)
             {
-
+                
                 shep.SetMainColor((Color)e.Data.GetData(typeof(Color)));
                 Console.WriteLine("Ship color after set: " + shep.GetMainColor());
                 DrawShep();
@@ -121,13 +122,12 @@ namespace WindowsFormAvianos
             eventAddShep?.Invoke(shep);
             Close();
         }
-
+        
         private void lablelShep_MouseDown(object sender, MouseEventArgs e)
         {
             labelShep.DoDragDrop(labelShep.Text, DragDropEffects.Move |
             DragDropEffects.Copy);
         }
-
+        
     }
 }
-
