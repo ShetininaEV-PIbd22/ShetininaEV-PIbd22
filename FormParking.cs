@@ -115,6 +115,12 @@ namespace WindowsFormAvianos
                    MessageBoxIcon.Error);
                     logger.Error("Переполнение");
                 }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                    logger.Error("Есть такой");
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка",
@@ -168,6 +174,12 @@ namespace WindowsFormAvianos
                 }
                 Draw();
             }
+        }
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
         }
     }
       

@@ -14,7 +14,7 @@ namespace WindowsFormAvianos
         Left,
         Right
     }
-    class Shep : Vehicle
+    class Shep : Vehicle, IComparable<Shep>, IEquatable<Shep>
     {
         /// Ширина отрисовки автомобиля
         protected const int shepWidth = 100;
@@ -96,5 +96,72 @@ namespace WindowsFormAvianos
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
+        public int CompareTo(Shep other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return MaxSpeed.CompareTo(other.MaxSpeed);
+            }
+            if (Weight != other.Weight)
+            {
+                return Weight.CompareTo(other.Weight);
+            }
+            if (MainColor != other.MainColor)
+            {
+                MainColor.Name.CompareTo(other.MainColor.Name);
+            }
+            return 0;
+        }
+        /// Метод интерфейса IEquatable для класса Shep
+        public bool Equals(Shep other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// Перегрузка метода от object
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Shep shepObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(shepObj);
+            }
+        }
+        /// Перегрузка метода от object
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
     }
 }

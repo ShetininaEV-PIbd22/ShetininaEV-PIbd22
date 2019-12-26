@@ -130,6 +130,11 @@ namespace WindowsFormAvianos
                 sr.Close();
             }
         }
+        /// Сортировка уровней
+        public void Sort()
+        {
+            parkingStages.Sort();
+        }
     }
 }
 
