@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 
 namespace WindowsFormAvianos
@@ -15,12 +16,15 @@ namespace WindowsFormAvianos
     {
         MultiLevelParking parking;
         /// Форма для добавления
-        FormCarConfig form;
+        FormShepConfig form;
         // Количество уровней-парковок 
         private const int countLevel = 5;
+        /// Логгер
+        private Logger logger;
         public FormParking()
         {
             InitializeComponent();
+            logger = LogManager.GetCurrentClassLogger();
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width, pictureBoxParking.Height);
             //заполнение listBox
             for (int i = 0; i < countLevel; i++)
@@ -40,22 +44,12 @@ namespace WindowsFormAvianos
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
-        }
-        private void buttonSetShep_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
+            else
             {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var shep = new Shep(100, 1000, dialog.Color);
-                    int place = parking[listBoxLevels.SelectedIndex] + shep;
-                    if (place == -1)
-                    {
-                        MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    Draw();
-                }
+                Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
+                Graphics gr = Graphics.FromImage(bmp);
+                gr.Clear(Color.White);
+                pictureBoxParking.Image = bmp;
             }
         }
         private void buttonTake_Click(object sender, EventArgs e)
@@ -64,48 +58,68 @@ namespace WindowsFormAvianos
             {
                 if (maskedTextBox.Text != "")
                 {
-                    var shep = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox.Text);
-                    if (shep != null)
+                    try
                     {
+                        var shep = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox.Text);
                         Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
                         Graphics gr = Graphics.FromImage(bmp);
                         shep.SetPosition(15, 5, pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
-                        shep.DrawShep(gr); pictureBoxTakeCar.Image = bmp;
+                        shep.DrawShep(gr);
+                        pictureBoxTakeCar.Image = bmp;
+                        logger.Info("Изъят корабль " + shep.ToString() + " с места " + maskedTextBox.Text);
+                        Draw();
                     }
-                    else
+                    catch (ParkingNotFoundException ex)
                     {
-                        Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
+                        MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                        logger.Error("Не найден корабль по месту " + maskedTextBox.Text);
+                        Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width,
+                        pictureBoxTakeCar.Height);
                         pictureBoxTakeCar.Image = bmp;
                     }
-                    Draw();
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Неизвестная ошибка",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        logger.Error("Неизвестная ошибка");
+                    }
                 }
             }
         }
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
-
         }
-
+        /// Обработка нажатия кнопки "Добавить"
         private void buttonSet_Click(object sender, EventArgs e)
         {
-            form = new FormCarConfig();
+            form = new FormShepConfig();
             form.AddEvent(AddShep);
             form.Show();
         }
-        /// Метод добавления
-        private void AddShep(ITransport shep)
+        /// Метод добавления коробля
+        public void AddShep(ITransport shep)
         {
             if (shep != null && listBoxLevels.SelectedIndex > -1)
             {
-                int place = parking[listBoxLevels.SelectedIndex] + shep;
-                if (place > -1)
+                try
                 {
+                    int place = parking[listBoxLevels.SelectedIndex] + shep;
+                    logger.Info("Добавлен корабль " + shep.ToString() + " на место " + place);
                     Draw();
                 }
-                else
+                catch (ParkingOverflowException ex)
                 {
-                    MessageBox.Show("Не удалось поставить");
+                    MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                    logger.Error("Переполнение");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Неизвестная ошибка");
                 }
             }
         }
@@ -113,31 +127,44 @@ namespace WindowsFormAvianos
         {
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (parking.SaveData(saveFileDialog.FileName))
+                try
                 {
-                    MessageBox.Show("Сохранение прошло успешно", "Результат",
-                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    parking.SaveData(saveFileDialog.FileName);
+                    MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    logger.Info("Сохранено в файл " + saveFileDialog.FileName);
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Не сохранилось", "Результат",
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Неизвестная ошибка");
                 }
+
             }
         }
+        /// Обработка нажатия пункта меню "Загрузить"
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (parking.LoadData(openFileDialog.FileName))
+                try
                 {
+                    parking.LoadData(openFileDialog.FileName);
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                    logger.Info("Загружено из файла " + openFileDialog.FileName);
                 }
-                else
+                catch (ParkingOccupiedPlaceException ex)
                 {
-                    MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK,
+                    MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
+                    logger.Error("Занятое место");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Неизвестная ошибка");
                 }
                 Draw();
             }

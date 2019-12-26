@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormAvianos
 {
-    public partial class FormCarConfig : Form
+    public partial class FormShepConfig : Form
     {
         ITransport shep = null;
         private event shepDelegate eventAddShep;
-        public FormCarConfig()
+        public FormShepConfig()
         {
             InitializeComponent();
             

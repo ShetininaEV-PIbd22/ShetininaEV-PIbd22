@@ -7,6 +7,27 @@ using System.Threading.Tasks;
 
 namespace WindowsFormAvianos
 {
+    public class ParkingOverflowException : Exception
+    {
+        public ParkingOverflowException() : base("На парковке нет свободных мест")
+        {
+            Console.WriteLine("На парковке нет свободных мест");
+        }
+    }
+    public class ParkingNotFoundException : Exception
+    {
+        public ParkingNotFoundException(int i) : base("Не найден по месту "+ i)
+        {
+            Console.WriteLine("Не найден по месту " + i);
+        }
+    }
+    public class ParkingOccupiedPlaceException : Exception
+    {
+        public ParkingOccupiedPlaceException(int i) : base("На месте " + i + " уже стоит")
+        {
+            Console.WriteLine("На месте " + i + " уже стоит");
+        }
+    }
     public class Parking<T> where T : class, ITransport
     {
         private Dictionary<int, T> _places;
@@ -27,7 +48,7 @@ namespace WindowsFormAvianos
             if (p._places.Count == p._maxCount)
             {
                 //место на парковке переполнено
-                return -1;
+                throw new ParkingOverflowException();
             } 
             for (int i = 0; i < p._maxCount; i++) 
             {
@@ -48,9 +69,10 @@ namespace WindowsFormAvianos
                 p._places.Remove(index); 
                 return shep; 
             }
-            return null;
+            //Не найден автомобиль по месту
+            throw new ParkingNotFoundException(index);
         }
-        private bool CheckFreePlace(int index)
+        public bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index); 
         }
@@ -89,7 +111,7 @@ namespace WindowsFormAvianos
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -98,6 +120,10 @@ namespace WindowsFormAvianos
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5
                     * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }
