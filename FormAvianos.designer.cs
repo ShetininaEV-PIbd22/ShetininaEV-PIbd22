@@ -33,13 +33,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.pictureBoxCars = new System.Windows.Forms.PictureBox();
-            this.Create = new System.Windows.Forms.Button();
+            this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
+            this.CreateShep = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).BeginInit();
+            this.CreateAvianos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -82,24 +83,24 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // pictureBoxCars
+            // pictureBoxAvianos
             // 
-            this.pictureBoxCars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCars.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCars.Name = "pictureBoxCars";
-            this.pictureBoxCars.Size = new System.Drawing.Size(884, 461);
-            this.pictureBoxCars.TabIndex = 5;
-            this.pictureBoxCars.TabStop = false;
+            this.pictureBoxAvianos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAvianos.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxAvianos.Name = "pictureBoxAvianos";
+            this.pictureBoxAvianos.Size = new System.Drawing.Size(884, 461);
+            this.pictureBoxAvianos.TabIndex = 5;
+            this.pictureBoxAvianos.TabStop = false;
             // 
-            // Create
+            // CreateShep
             // 
-            this.Create.Location = new System.Drawing.Point(0, 0);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(75, 23);
-            this.Create.TabIndex = 6;
-            this.Create.Text = "Create";
-            this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.CreateShep.Location = new System.Drawing.Point(0, 0);
+            this.CreateShep.Name = "CreateShep";
+            this.CreateShep.Size = new System.Drawing.Size(75, 23);
+            this.CreateShep.TabIndex = 6;
+            this.CreateShep.Text = "Shep";
+            this.CreateShep.UseVisualStyleBackColor = true;
+            this.CreateShep.Click += new System.EventHandler(this.CreateShep_Click);
             // 
             // buttonUp
             // 
@@ -150,23 +151,34 @@
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonMove_Click);
             // 
+            // CreateAvianos
+            // 
+            this.CreateAvianos.Location = new System.Drawing.Point(81, 0);
+            this.CreateAvianos.Name = "CreateAvianos";
+            this.CreateAvianos.Size = new System.Drawing.Size(75, 23);
+            this.CreateAvianos.TabIndex = 11;
+            this.CreateAvianos.Text = "Avianos";
+            this.CreateAvianos.UseVisualStyleBackColor = true;
+            this.CreateAvianos.Click += new System.EventHandler(this.CreateAvianos_Click);
+            // 
             // FormAvianos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.CreateAvianos);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.Create);
-            this.Controls.Add(this.pictureBoxCars);
+            this.Controls.Add(this.CreateShep);
+            this.Controls.Add(this.pictureBoxAvianos);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "FormAvianos";
             this.Text = "Avianosec";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,12 +188,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBoxCars;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.PictureBox pictureBoxAvianos;
+        private System.Windows.Forms.Button CreateShep;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonDown;
+        private System.Windows.Forms.Button CreateAvianos;
     }
 }
 

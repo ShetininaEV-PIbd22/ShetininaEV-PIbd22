@@ -7,132 +7,58 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    class Avianos
+    public class Avianos : Shep
     {
-        /// Левая координата отрисовки автомобиля
-        private float _startPosX;
-        /// Правая кооридната отрисовки автомобиля
-        private float _startPosY;
-        /// Ширина окна отрисовки
-        private int _pictureWidth;
-        /// Высота окна отрисовки
-        private int _pictureHeight;
-        /// Ширина отрисовки автомобиля
-        private const int avWidth = 100;
-        /// Ширина отрисовки автомобиля
-        private const int avHeight = 60;
-        /// Максимальная скорость
-        public int MaxSpeed { private set; get; }
-        /// Вес 
-        public float Weight { private set; get; }
-        /// Основной цвет 
-        public Color MainColor { private set; get; }
-        /// Дополнительный цвет
         public Color DopColor { private set; get; }
-        /// Признак наличия переднего лифта
+        // Признак наличия переднего лифтов
         public bool FirstLift { private set; get; }
-        /// Признак наличия заднего лифтов
+        // Признак наличия заднего лифтов
         public bool SecondLift { private set; get; }
         //признак наличия рубки
         public bool Rubka { private set; get; }
-
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="maxSpeed">Максимальная скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
-        /// <param name="mainColor">Основной цвет кузова</param>
-        /// <param name="dopColor">Дополнительный цвет</param>
-        /// <param name="firctLift">Признак наличия переднего лифта</param>
-        /// <param name="secondLift">Признак наличия заднего лифта</param>
-        public Avianos(int maxSpeed, float weight, Color mainColor, Color dopColor,
-       bool frontSpoiler, bool sideSpoiler, bool backSpoiler,bool firstLift, bool secondLift, bool rubka)
+        // Дополнительный цвет
+        public Color DopColor_1 { private set; get; }
+        // Признак наличия ор
+        public bool Orudie { private set; get; }
+        // признак разметки
+        public bool Razmetka { private set; get; }
+        // Конструктор
+        public Avianos(int maxSpeed, float weight, Color mainColor, Color dopColor, bool firstLift, bool secondLift, bool rubka, Color dopColor_1, bool orudie, bool razmetka) :
+            base(maxSpeed, weight, mainColor)
         {
-            MaxSpeed = maxSpeed;
-            Weight = weight;
-            MainColor = mainColor;
             DopColor = dopColor;
             FirstLift = firstLift;
-            Rubka = rubka;
             SecondLift = secondLift;
+            Rubka = rubka;
+            DopColor_1 = dopColor_1;
+            Orudie = orudie;
+            Razmetka = razmetka;
         }
-        /// <summary>
-        /// Установка позиции
-        /// </summary>
-        /// <param name="x">Координата X</param>
-        /// <param name="y">Координата Y</param>
-        /// <param name="width">Ширина картинки</param>
-        /// <param name="height">Высота картинки</param>
-        public void SetPosition(int x, int y, int width, int height)
+        public override void DrawShep(Graphics g)
         {
-            _startPosX = x;
-            _startPosY = y;
-            _pictureWidth = width;
-            _pictureHeight = height;
-        }
-        public void MoveTransport(Direction direction)
-        {
-            float step = MaxSpeed * 100 / Weight;
-            switch (direction)
-            {
-                // вправо
-                case Direction.Right:
-                    if (_startPosX + step < _pictureWidth - avWidth)
-                    {
-                        _startPosX = _startPosX + step;
-                    }
-                    break;
-                //влево
-                case Direction.Left:
-                    if (_startPosX - step > 0)
-                    {
-                        _startPosX -= step;
-                    }
-                    break;
-                //вверх
-                case Direction.Up:
-                    if (_startPosY - step > 0)
-                    {
-                        _startPosY -= step;
-                    }
-                    break;
-                //вниз
-                case Direction.Down:
-                    if (_startPosY + step < _pictureHeight - avHeight)
-                    {
-                        _startPosY += step;
-                    }
-                    break;
-            }
-        }
-        /// Отрисовка 
-        public void DrawShep(Graphics g)
-        {
-            Pen pen = new Pen(MainColor);
-            Brush brush = new SolidBrush(MainColor);
-            //палуба
-            g.FillRectangle(brush, _startPosX, _startPosY, 60, 30);
-            // нос
-            g.DrawLine(pen, _startPosX + 60, _startPosY + 5, _startPosX + 75, _startPosY + 15);
-                g.DrawLine(pen, _startPosX + 75, _startPosY + 15, _startPosX + 60, _startPosY + 25);
-            //корма
-            g.DrawLine(pen, _startPosX, _startPosY + 5, _startPosX - 10, _startPosY + 10);
-            g.DrawLine(pen, _startPosX - 10, _startPosY + 10, _startPosX - 10, _startPosY + 20);
-            g.DrawLine(pen, _startPosX - 10, _startPosY + 20, _startPosX, _startPosY + 25);
+            base.DrawShep(g);
+            Brush brush = new SolidBrush(DopColor);
             if (FirstLift)
             {
-                Brush lift = new SolidBrush(DopColor);
-                g.FillRectangle(lift, _startPosX + 10, _startPosY + 10, 10, 10);
+                g.FillRectangle(brush, _startPosX + 10, _startPosY + 10, 10, 10);
             }
             if (SecondLift)
             {
-                Brush lift = new SolidBrush(DopColor);
-                g.FillRectangle(lift, _startPosX + 40, _startPosY + 10, 10, 10);
+                g.FillRectangle(brush, _startPosX + 40, _startPosY + 10, 10, 10);
             }
             if (Rubka)
             {
-                Brush rubka = new SolidBrush(DopColor);
-                g.FillRectangle(rubka, _startPosX+30, _startPosY+25, 5, 5);
+                g.FillRectangle(brush, _startPosX + 30, _startPosY + 25, 5, 5);
+            }
+            Brush brush_1 = new SolidBrush(DopColor_1);
+            Pen pen = new Pen(DopColor_1);
+            if (Orudie)
+            {
+                g.FillRectangle(brush_1, _startPosX + 62, _startPosY + 12, 3, 3);
+            }
+            if (Razmetka)
+            {
+                g.DrawLine(pen, _startPosX + 20, _startPosY + 15, _startPosX + 40, _startPosY + 15);
             }
         }
     }
