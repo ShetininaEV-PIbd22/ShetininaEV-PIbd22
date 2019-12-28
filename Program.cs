@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppAvianos
 {
+    public delegate void shepDelegate(ITransport shep);
     static class Program
     {
         /// <summary>

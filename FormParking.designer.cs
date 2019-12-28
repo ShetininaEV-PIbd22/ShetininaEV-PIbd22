@@ -33,8 +33,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
-            this.Shep = new System.Windows.Forms.Button();
-            this.Avianos = new System.Windows.Forms.Button();
+            this.buttonSet = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TakeOut = new System.Windows.Forms.Button();
@@ -87,25 +86,15 @@
             this.pictureBoxAvianos.TabIndex = 5;
             this.pictureBoxAvianos.TabStop = false;
             // 
-            // Shep
+            // buttonSet
             // 
-            this.Shep.Location = new System.Drawing.Point(34, 160);
-            this.Shep.Name = "Shep";
-            this.Shep.Size = new System.Drawing.Size(75, 23);
-            this.Shep.TabIndex = 6;
-            this.Shep.Text = "Корабль";
-            this.Shep.UseVisualStyleBackColor = true;
-            this.Shep.Click += new System.EventHandler(this.buttonSetShep_Click);
-            // 
-            // Avianos
-            // 
-            this.Avianos.Location = new System.Drawing.Point(34, 198);
-            this.Avianos.Name = "Avianos";
-            this.Avianos.Size = new System.Drawing.Size(75, 23);
-            this.Avianos.TabIndex = 11;
-            this.Avianos.Text = "Авианосец";
-            this.Avianos.UseVisualStyleBackColor = true;
-            this.Avianos.Click += new System.EventHandler(this.buttonSetAvianos_Click);
+            this.buttonSet.Location = new System.Drawing.Point(23, 188);
+            this.buttonSet.Name = "buttonSet";
+            this.buttonSet.Size = new System.Drawing.Size(75, 23);
+            this.buttonSet.TabIndex = 6;
+            this.buttonSet.Text = "Поставить";
+            this.buttonSet.UseVisualStyleBackColor = true;
+            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
             // 
             // maskedTextBox
             // 
@@ -152,8 +141,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxLevels);
-            this.groupBox2.Controls.Add(this.Shep);
-            this.groupBox2.Controls.Add(this.Avianos);
+            this.groupBox2.Controls.Add(this.buttonSet);
             this.groupBox2.Location = new System.Drawing.Point(740, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(144, 237);
@@ -213,8 +201,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBoxAvianos;
-        private System.Windows.Forms.Button Shep;
-        private System.Windows.Forms.Button Avianos;
+        private System.Windows.Forms.Button buttonSet;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button TakeOut;
