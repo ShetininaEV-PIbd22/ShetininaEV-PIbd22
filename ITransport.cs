@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    interface ITransport
+    public interface ITransport
     {
         /// Установка позиции
         /// <param name="x">Координата X</param>

@@ -37,24 +37,24 @@ namespace WindowsFormsAppAvianos
         public override void DrawShep(Graphics g)
         {
             base.DrawShep(g);
-            Brush brush = new SolidBrush(DopColor);
+            Brush spoiler = new SolidBrush(DopColor);
             if (FirstLift)
             {
-                g.FillRectangle(brush, _startPosX + 10, _startPosY + 10, 10, 10);
+                g.FillRectangle(spoiler, _startPosX + 10, _startPosY + 10, 10, 10);
             }
             if (SecondLift)
             {
-                g.FillRectangle(brush, _startPosX + 40, _startPosY + 10, 10, 10);
+                g.FillRectangle(spoiler, _startPosX + 40, _startPosY + 10, 10, 10);
             }
             if (Rubka)
             {
-                g.FillRectangle(brush, _startPosX + 30, _startPosY + 25, 5, 5);
+                g.FillRectangle(spoiler, _startPosX + 30, _startPosY + 25, 5, 5);
             }
-            Brush brush_1 = new SolidBrush(DopColor_1);
+            Brush spoiler_1 = new SolidBrush(DopColor_1);
             Pen pen = new Pen(DopColor_1);
             if (Orudie)
             {
-                g.FillRectangle(brush_1, _startPosX + 62, _startPosY + 12, 3, 3);
+                g.FillRectangle(spoiler_1, _startPosX + 62, _startPosY + 12, 3, 3);
             }
             if (Razmetka)
             {
