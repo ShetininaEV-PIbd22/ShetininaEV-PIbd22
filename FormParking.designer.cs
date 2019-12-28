@@ -36,14 +36,18 @@
             this.Shep = new System.Windows.Forms.Button();
             this.Avianos = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TakeOut = new System.Windows.Forms.Button();
             this.pictureBoxTakeShep = new System.Windows.Forms.PictureBox();
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listBoxLevels = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeShep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -85,44 +89,35 @@
             // 
             // Shep
             // 
-            this.Shep.Location = new System.Drawing.Point(809, 0);
+            this.Shep.Location = new System.Drawing.Point(34, 160);
             this.Shep.Name = "Shep";
             this.Shep.Size = new System.Drawing.Size(75, 23);
             this.Shep.TabIndex = 6;
-            this.Shep.Text = "Shep";
+            this.Shep.Text = "Корабль";
             this.Shep.UseVisualStyleBackColor = true;
             this.Shep.Click += new System.EventHandler(this.buttonSetShep_Click);
             // 
             // Avianos
             // 
-            this.Avianos.Location = new System.Drawing.Point(809, 29);
+            this.Avianos.Location = new System.Drawing.Point(34, 198);
             this.Avianos.Name = "Avianos";
             this.Avianos.Size = new System.Drawing.Size(75, 23);
             this.Avianos.TabIndex = 11;
-            this.Avianos.Text = "Avianos";
+            this.Avianos.Text = "Авианосец";
             this.Avianos.UseVisualStyleBackColor = true;
             this.Avianos.Click += new System.EventHandler(this.buttonSetAvianos_Click);
             // 
             // maskedTextBox
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(753, 290);
+            this.maskedTextBox.Location = new System.Drawing.Point(23, 42);
             this.maskedTextBox.Name = "maskedTextBox";
             this.maskedTextBox.Size = new System.Drawing.Size(96, 20);
             this.maskedTextBox.TabIndex = 12;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(750, 261);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Заберите судно";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(750, 274);
+            this.label2.Location = new System.Drawing.Point(9, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 14;
@@ -130,7 +125,7 @@
             // 
             // TakeOut
             // 
-            this.TakeOut.Location = new System.Drawing.Point(753, 316);
+            this.TakeOut.Location = new System.Drawing.Point(34, 68);
             this.TakeOut.Name = "TakeOut";
             this.TakeOut.Size = new System.Drawing.Size(75, 23);
             this.TakeOut.TabIndex = 15;
@@ -140,7 +135,7 @@
             // 
             // pictureBoxTakeShep
             // 
-            this.pictureBoxTakeShep.Location = new System.Drawing.Point(746, 358);
+            this.pictureBoxTakeShep.Location = new System.Drawing.Point(12, 97);
             this.pictureBoxTakeShep.Name = "pictureBoxTakeShep";
             this.pictureBoxTakeShep.Size = new System.Drawing.Size(126, 91);
             this.pictureBoxTakeShep.TabIndex = 16;
@@ -154,18 +149,47 @@
             this.pictureBoxParking.TabIndex = 17;
             this.pictureBoxParking.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.listBoxLevels);
+            this.groupBox2.Controls.Add(this.Shep);
+            this.groupBox2.Controls.Add(this.Avianos);
+            this.groupBox2.Location = new System.Drawing.Point(740, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(144, 237);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Уровни";
+            // 
+            // listBoxLevels
+            // 
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.Location = new System.Drawing.Point(12, 19);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(120, 121);
+            this.listBoxLevels.TabIndex = 0;
+            this.listBoxLevels.Click += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBoxTakeShep);
+            this.groupBox1.Controls.Add(this.TakeOut);
+            this.groupBox1.Controls.Add(this.maskedTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(740, 255);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(144, 194);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Забрать";
+            // 
             // FormParking
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBoxParking);
-            this.Controls.Add(this.pictureBoxTakeShep);
-            this.Controls.Add(this.TakeOut);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox);
-            this.Controls.Add(this.Avianos);
-            this.Controls.Add(this.Shep);
             this.Controls.Add(this.pictureBoxAvianos);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -176,8 +200,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeShep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -190,11 +216,13 @@
         private System.Windows.Forms.Button Shep;
         private System.Windows.Forms.Button Avianos;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button TakeOut;
         private System.Windows.Forms.PictureBox pictureBoxTakeShep;
         private System.Windows.Forms.PictureBox pictureBoxParking;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox listBoxLevels;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
