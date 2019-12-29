@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    public class Avianos : Shep
+    class Avianos: Shep
     {
         public Color DopColor { private set; get; }
         // Признак наличия переднего лифтов
@@ -22,8 +22,9 @@ namespace WindowsFormsAppAvianos
         public bool Orudie { private set; get; }
         // признак разметки
         public bool Razmetka { private set; get; }
+
         // Конструктор
-        public Avianos(int maxSpeed, float weight, Color mainColor, Color dopColor, bool firstLift, bool secondLift, bool rubka, Color dopColor_1, bool orudie, bool razmetka) :
+        public Avianos (int maxSpeed, float weight, Color mainColor, Color dopColor, bool firstLift, bool secondLift, bool rubka, Color dopColor_1, bool orudie, bool razmetka) :
             base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
@@ -33,6 +34,23 @@ namespace WindowsFormsAppAvianos
             DopColor_1 = dopColor_1;
             Orudie = orudie;
             Razmetka = razmetka;
+        }
+        public Avianos(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 10)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                FirstLift = Convert.ToBoolean(strs[4]);
+                SecondLift = Convert.ToBoolean(strs[5]);
+                Rubka = Convert.ToBoolean(strs[6]);
+                DopColor_1 = Color.FromName(strs[7]);
+                Orudie = Convert.ToBoolean(strs[8]);
+                Razmetka = Convert.ToBoolean(strs[9]);
+            }
         }
         public override void DrawShep(Graphics g)
         {
@@ -65,5 +83,11 @@ namespace WindowsFormsAppAvianos
         {
             DopColor = color;
         }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + FirstLift + ";" +
+           SecondLift + ";" + Rubka + ";" + DopColor_1.Name + ";" + Orudie + ";" + Razmetka;
+        }
     }
 }
+               
