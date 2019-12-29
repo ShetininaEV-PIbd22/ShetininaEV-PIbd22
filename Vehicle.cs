@@ -33,7 +33,6 @@ namespace WindowsFormsAppAvianos
         
         public void SetMainColor(Color color)
         {
-            Console.WriteLine("SET!");
             MainColor = color;
         }
         public abstract void DrawShep(Graphics g);

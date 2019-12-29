@@ -27,7 +27,7 @@ namespace WindowsFormsAppAvianos
             if (p._places.Count == p._maxCount)
             {
                 //место на парковке переполнено
-                return -1;
+                throw new ParkingOverflowException();
             } 
             for (int i = 0; i < p._maxCount; i++) 
             {
@@ -48,9 +48,10 @@ namespace WindowsFormsAppAvianos
                 p._places.Remove(index); 
                 return shep; 
             }
-            return null;
+            //Не найден автомобиль по месту
+            throw new ParkingNotFoundException(index);
         }
-        private bool CheckFreePlace(int index)
+        public bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index); 
         }
@@ -89,7 +90,7 @@ namespace WindowsFormsAppAvianos
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -98,6 +99,10 @@ namespace WindowsFormsAppAvianos
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5
                     * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }
