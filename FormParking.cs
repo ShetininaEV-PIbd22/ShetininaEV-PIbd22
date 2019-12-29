@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NLog;
-
 
 namespace WindowsFormsAppAvianos
 {
@@ -20,11 +19,11 @@ namespace WindowsFormsAppAvianos
         // Количество уровней-парковок 
         private const int countLevel = 5;
         /// Логгер
-        private Logger logger;
+       private Logger logger; 
         public FormParking()
         {
             InitializeComponent();
-            logger = LogManager.GetCurrentClassLogger();
+            logger =LogManager.GetCurrentClassLogger();
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width, pictureBoxParking.Height);
             //заполнение listBox
             for (int i = 0; i < countLevel; i++)
@@ -50,6 +49,48 @@ namespace WindowsFormsAppAvianos
                 Graphics gr = Graphics.FromImage(bmp);
                 gr.Clear(Color.White);
                 pictureBoxParking.Image = bmp;
+            }
+        }
+        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Draw();
+        }
+        /// Обработка нажатия кнопки "Добавить"
+        private void buttonSet_Click(object sender, EventArgs e)
+        {
+            form = new FormShepConfig();
+            form.AddEvent(AddShep);
+            form.Show();
+        }
+        /// Метод добавления коробля
+        public void AddShep(ITransport shep)
+        {
+            if (shep != null && listBoxLevels.SelectedIndex > -1)
+            {
+                try
+                {
+                    int place = parking[listBoxLevels.SelectedIndex] + shep;
+                    logger.Info("Добавлен корабль " + shep.ToString() + " на место " + place);
+                    Draw();
+                }
+                catch (ParkingOverflowException ex)
+                {
+                    MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                    logger.Error("Переполнение");
+                }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                    logger.Error("Есть такой");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Неизвестная ошибка",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error("Неизвестная ошибка");
+                }
             }
         }
         private void buttonTake_Click(object sender, EventArgs e)
@@ -84,42 +125,6 @@ namespace WindowsFormsAppAvianos
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                         logger.Error("Неизвестная ошибка");
                     }
-                }
-            }
-        }
-        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Draw();
-        }
-        /// Обработка нажатия кнопки "Добавить"
-        private void buttonSet_Click(object sender, EventArgs e)
-        {
-            form = new FormShepConfig();
-            form.AddEvent(AddShep);
-            form.Show();
-        }
-        /// Метод добавления коробля
-        public void AddShep(ITransport shep)
-        {
-            if (shep != null && listBoxLevels.SelectedIndex > -1)
-            {
-                try
-                {
-                    int place = parking[listBoxLevels.SelectedIndex] + shep;
-                    logger.Info("Добавлен корабль " + shep.ToString() + " на место " + place);
-                    Draw();
-                }
-                catch (ParkingOverflowException ex)
-                {
-                    MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-                    logger.Error("Переполнение");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Неизвестная ошибка",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    logger.Error("Неизвестная ошибка");
                 }
             }
         }
@@ -169,6 +174,12 @@ namespace WindowsFormsAppAvianos
                 Draw();
             }
         }
+        /// Обработка нажатия кнопки "Сортировка"
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }
     }
-      
 }
