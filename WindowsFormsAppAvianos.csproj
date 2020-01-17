@@ -54,8 +54,11 @@
       <DependentUpon>FormAvianos.cs</DependentUpon>
     </Compile>
     <Compile Include="Avianos.cs" />
+    <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shep.cs" />
+    <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="FormAvianos.resx">
       <DependentUpon>FormAvianos.cs</DependentUpon>
     </EmbeddedResource>
