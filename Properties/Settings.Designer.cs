@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace laba_7.Properties
+namespace WindowsFormsAppAvianos.Properties
 {
 
 

@@ -24,6 +24,8 @@ namespace WindowsFormsAppAvianos
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
             parkingStages = new List<Parking<ITransport>>();
+            this.pictureWidth = pictureWidth;
+            this.pictureHeight = pictureHeight;
             for (int i = 0; i < countStages; ++i)
             {
                 parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
@@ -52,28 +54,19 @@ namespace WindowsFormsAppAvianos
                 {
                     //Начинаем уровень
                     sw.Write("Level" + Environment.NewLine);
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach (ITransport shep in level)
                     {
-                        try
+                        //Записываем тип мшаины
+                        if (shep.GetType().Name == "Shep")
                         {
-                            var shep = level[i];
-                            if (shep != null)
-                            {
-                                //если место не пустое
-                                //Записываем тип мшаины
-                                if (shep.GetType().Name == "Shep")
-                                {
-                                    sw.Write(i + ":Shep:");
-                                }
-                                if (shep.GetType().Name == "Avianos")
-                                {
-                                    sw.Write(i + ":Avianos:");
-                                }
-                                //Записываемые параметры
-                                sw.Write(shep + Environment.NewLine);
-                            }
+                            sw.Write(level.GetKey + ":Shep:");
                         }
-                        finally { }
+                        if (shep.GetType().Name == "Avianos")
+                        {
+                            sw.Write(level.GetKey + ":Avianos:");
+                        }
+                        //Записываемые параметры
+                        sw.Write(shep + Environment.NewLine);
                     }
                 }
             }
@@ -129,6 +122,11 @@ namespace WindowsFormsAppAvianos
                 }
                 sr.Close();
             }
+        }
+        /// Сортировка уровней
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }

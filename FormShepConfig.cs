@@ -128,6 +128,5 @@ namespace WindowsFormsAppAvianos
             labelShep.DoDragDrop(labelShep.Text, DragDropEffects.Move |
             DragDropEffects.Copy);
         }
-        
     }
 }

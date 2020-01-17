@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    class Avianos: Shep
+    class Avianos: Shep, IComparable<Avianos>, IEquatable<Avianos>
     {
         public Color DopColor { private set; get; }
         // Признак наличия переднего лифтов
@@ -82,11 +82,111 @@ namespace WindowsFormsAppAvianos
         public void SetDopColor(Color color)
         {
             DopColor = color;
+            DopColor_1 = color;
         }
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + FirstLift + ";" +
            SecondLift + ";" + Rubka + ";" + DopColor_1.Name + ";" + Orudie + ";" + Razmetka;
+        }
+        public int CompareTo(Avianos other)
+        {
+            var res = (this is Shep).CompareTo(other is Shep);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (FirstLift != other.FirstLift)
+            {
+                return FirstLift.CompareTo(other.FirstLift);
+            }
+            if (SecondLift != other.SecondLift)
+            {
+                return SecondLift.CompareTo(other.SecondLift);
+            }
+            if (Rubka != other.Rubka)
+            {
+                return Rubka.CompareTo(other.Rubka);
+            }
+            if (DopColor_1 != other.DopColor_1)
+            {
+                DopColor_1.Name.CompareTo(other.DopColor_1.Name);
+            }
+            if (Orudie != other.Orudie)
+            {
+                return Orudie.CompareTo(other.Orudie);
+            }
+            if (Razmetka != other.Razmetka)
+            {
+                return Orudie.CompareTo(other.Orudie);
+            }
+            return 0;
+        }
+        public bool Equals(Avianos other)
+        {
+            var res = (this as Shep).Equals(other as Shep);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (FirstLift != other.FirstLift)
+            {
+                return false;
+            }
+            if (SecondLift != other.SecondLift)
+            {
+                return false; 
+            }
+            if (Rubka != other.Rubka)
+            {
+                return false;
+            }
+            if (DopColor_1 != other.DopColor_1)
+            {
+                return false;
+            }
+            if (Orudie != other.Orudie)
+            {
+                return false;
+            }
+            if (Razmetka != other.Razmetka)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// Перегрузка метода от object
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Avianos shepObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(shepObj);
+            }
+        }
+        /// Перегрузка метода от object
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
