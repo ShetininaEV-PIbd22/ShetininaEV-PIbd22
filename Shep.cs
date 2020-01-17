@@ -9,9 +9,9 @@ namespace WindowsFormsAppAvianos
 {
     class Shep : Vehicle
     {
-        /// Ширина отрисовки автомобиля
+        /// Ширина отрисовки 
         protected const int shepWidth = 100;
-        /// Ширина отрисовки автомобиля
+        /// Ширина отрисовки 
         protected const int shepHeight = 60;
         // Дополнительный цвет
         public Color MainColor { private set; get; }
