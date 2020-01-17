@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppAvianos
 {
-    partial class FormShepConfig
+    partial class FormCarConfig
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -445,3 +445,4 @@
         private System.Windows.Forms.Label labelDopColor;
     }
 }
+

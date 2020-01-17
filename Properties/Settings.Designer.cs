@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsAppAvianos.Properties
+namespace TP_laba6._1.Properties
 {
 
 

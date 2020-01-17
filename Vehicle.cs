@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    public abstract class Vehicle : ITransport
+    public abstract class Vehicle: ITransport
     {
         // Левая координата отрисовки автомобиля
         protected float _startPosX;
@@ -22,7 +22,7 @@ namespace WindowsFormsAppAvianos
         // Вес автомобиля
         public float Weight { protected set; get; }
         // Основной цвет кузова
-        public Color MainColor { protected set; get; }
+        public Color MainColor { set; get; }
         public void SetPosition(int x, int y, int width, int height)
         {
             _startPosX = x;
@@ -30,16 +30,18 @@ namespace WindowsFormsAppAvianos
             _pictureWidth = width;
             _pictureHeight = height;
         }
+        
         public void SetMainColor(Color color)
         {
+            Console.WriteLine("SET!");
             MainColor = color;
-            Console.WriteLine("Ship main color: " + MainColor.Name);
         }
+        public abstract void DrawShep(Graphics g);
+        public abstract void MoveTransport(Direction direction);
         public String GetMainColor()
         {
             return MainColor.Name;
         }
-        public abstract void DrawShep(Graphics g);
-        public abstract void MoveTransport(Direction direction);
     }
 }
+
