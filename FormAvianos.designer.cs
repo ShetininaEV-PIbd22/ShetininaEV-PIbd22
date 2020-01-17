@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvianos));
             this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
-            this.Create = new System.Windows.Forms.Button();
+            this.CreateAvianos = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
@@ -42,20 +42,20 @@
             // 
             this.pictureBoxAvianos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxAvianos.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxAvianos.Name = "pictureBoxCars";
+            this.pictureBoxAvianos.Name = "pictureBoxAvianos";
             this.pictureBoxAvianos.Size = new System.Drawing.Size(884, 461);
             this.pictureBoxAvianos.TabIndex = 5;
             this.pictureBoxAvianos.TabStop = false;
             // 
             // Create
             // 
-            this.Create.Location = new System.Drawing.Point(0, 0);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(75, 23);
-            this.Create.TabIndex = 6;
-            this.Create.Text = "Create";
-            this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.CreateAvianos.Location = new System.Drawing.Point(0, 0);
+            this.CreateAvianos.Name = "Create";
+            this.CreateAvianos.Size = new System.Drawing.Size(75, 23);
+            this.CreateAvianos.TabIndex = 6;
+            this.CreateAvianos.Text = "Create";
+            this.CreateAvianos.UseVisualStyleBackColor = true;
+            this.CreateAvianos.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonUp
             // 
@@ -114,8 +114,8 @@
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.Create);
-            this.Controls.Add(this.pictureBoxCars);
+            this.Controls.Add(this.CreateAvianos);
+            this.Controls.Add(this.pictureBoxAvianos);
             this.Name = "FormAvianos";
             this.Text = "Avianosec";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).EndInit();
@@ -125,7 +125,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBoxAvianos;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.Button CreateAvianos;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
