@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvianos));
-            this.pictureBoxCars = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
             this.Create = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
@@ -38,14 +38,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBoxCars
+            // pictureBoxAvianos
             // 
-            this.pictureBoxCars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCars.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCars.Name = "pictureBoxCars";
-            this.pictureBoxCars.Size = new System.Drawing.Size(884, 461);
-            this.pictureBoxCars.TabIndex = 5;
-            this.pictureBoxCars.TabStop = false;
+            this.pictureBoxAvianos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAvianos.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxAvianos.Name = "pictureBoxCars";
+            this.pictureBoxAvianos.Size = new System.Drawing.Size(884, 461);
+            this.pictureBoxAvianos.TabIndex = 5;
+            this.pictureBoxAvianos.TabStop = false;
             // 
             // Create
             // 
@@ -124,7 +124,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBoxCars;
+        private System.Windows.Forms.PictureBox pictureBoxAvianos;
         private System.Windows.Forms.Button Create;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonLeft;
