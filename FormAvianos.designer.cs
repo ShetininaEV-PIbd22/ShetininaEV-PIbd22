@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvianos));
             this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
-            this.CreateAvianos = new System.Windows.Forms.Button();
+            this.CreateShep = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
@@ -47,15 +47,15 @@
             this.pictureBoxAvianos.TabIndex = 5;
             this.pictureBoxAvianos.TabStop = false;
             // 
-            // Create
+            // CreateShep
             // 
-            this.CreateAvianos.Location = new System.Drawing.Point(0, 0);
-            this.CreateAvianos.Name = "Create";
-            this.CreateAvianos.Size = new System.Drawing.Size(75, 23);
-            this.CreateAvianos.TabIndex = 6;
-            this.CreateAvianos.Text = "Create";
-            this.CreateAvianos.UseVisualStyleBackColor = true;
-            this.CreateAvianos.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.CreateShep.Location = new System.Drawing.Point(0, 0);
+            this.CreateShep.Name = "Create";
+            this.CreateShep.Size = new System.Drawing.Size(75, 23);
+            this.CreateShep.TabIndex = 6;
+            this.CreateShep.Text = "Create";
+            this.CreateShep.UseVisualStyleBackColor = true;
+            this.CreateShep.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonUp
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.CreateAvianos);
+            this.Controls.Add(this.CreateShep);
             this.Controls.Add(this.pictureBoxAvianos);
             this.Name = "FormAvianos";
             this.Text = "Avianosec";
@@ -125,7 +125,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBoxAvianos;
-        private System.Windows.Forms.Button CreateAvianos;
+        private System.Windows.Forms.Button CreateShep;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
