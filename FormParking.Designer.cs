@@ -3,14 +3,14 @@
     partial class FormParking
     {
         /// <summary>
-        /// Required designer variable.
+        /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,53 +20,53 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
-            this.Shep = new System.Windows.Forms.Button();
-            this.Avianos = new System.Windows.Forms.Button();
+            this.pictureBoxAvianos = new System.Windows.Forms.PictureBox();
+            this.buttonSet = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TakeOut = new System.Windows.Forms.Button();
             this.pictureBoxTakeShep = new System.Windows.Forms.PictureBox();
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeShep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Shep
+            // pictureBoxAvianos
             // 
-            this.Shep.Location = new System.Drawing.Point(43, 146);
-            this.Shep.Name = "Shep";
-            this.Shep.Size = new System.Drawing.Size(75, 23);
-            this.Shep.TabIndex = 6;
-            this.Shep.Text = "Shep";
-            this.Shep.UseVisualStyleBackColor = true;
-            this.Shep.Click += new System.EventHandler(this.buttonSetShep_Click);
+            this.pictureBoxAvianos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAvianos.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxAvianos.Name = "pictureBoxAvianos";
+            this.pictureBoxAvianos.Size = new System.Drawing.Size(884, 461);
+            this.pictureBoxAvianos.TabIndex = 5;
+            this.pictureBoxAvianos.TabStop = false;
             // 
-            // Avianos
+            // buttonSet
             // 
-            this.Avianos.Location = new System.Drawing.Point(43, 187);
-            this.Avianos.Name = "Avianos";
-            this.Avianos.Size = new System.Drawing.Size(75, 23);
-            this.Avianos.TabIndex = 11;
-            this.Avianos.Text = "Avianos";
-            this.Avianos.UseVisualStyleBackColor = true;
-            this.Avianos.Click += new System.EventHandler(this.buttonSetAvianos_Click);
+            this.buttonSet.Location = new System.Drawing.Point(23, 188);
+            this.buttonSet.Name = "buttonSet";
+            this.buttonSet.Size = new System.Drawing.Size(75, 23);
+            this.buttonSet.TabIndex = 6;
+            this.buttonSet.Text = "Поставить";
+            this.buttonSet.UseVisualStyleBackColor = true;
+            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
             // 
             // maskedTextBox
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(22, 36);
+            this.maskedTextBox.Location = new System.Drawing.Point(23, 42);
             this.maskedTextBox.Name = "maskedTextBox";
             this.maskedTextBox.Size = new System.Drawing.Size(96, 20);
             this.maskedTextBox.TabIndex = 12;
@@ -82,7 +82,7 @@
             // 
             // TakeOut
             // 
-            this.TakeOut.Location = new System.Drawing.Point(34, 62);
+            this.TakeOut.Location = new System.Drawing.Point(34, 68);
             this.TakeOut.Name = "TakeOut";
             this.TakeOut.Size = new System.Drawing.Size(75, 23);
             this.TakeOut.TabIndex = 15;
@@ -92,7 +92,7 @@
             // 
             // pictureBoxTakeShep
             // 
-            this.pictureBoxTakeShep.Location = new System.Drawing.Point(12, 91);
+            this.pictureBoxTakeShep.Location = new System.Drawing.Point(12, 97);
             this.pictureBoxTakeShep.Name = "pictureBoxTakeShep";
             this.pictureBoxTakeShep.Size = new System.Drawing.Size(126, 91);
             this.pictureBoxTakeShep.TabIndex = 16;
@@ -106,33 +106,10 @@
             this.pictureBoxParking.TabIndex = 17;
             this.pictureBoxParking.TabStop = false;
             // 
-            // listBoxLevels
-            // 
-            this.listBoxLevels.FormattingEnabled = true;
-            this.listBoxLevels.Location = new System.Drawing.Point(18, 19);
-            this.listBoxLevels.Name = "listBoxLevels";
-            this.listBoxLevels.Size = new System.Drawing.Size(120, 121);
-            this.listBoxLevels.TabIndex = 0;
-            this.listBoxLevels.Click += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.TakeOut);
-            this.groupBox1.Controls.Add(this.pictureBoxTakeShep);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.maskedTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(740, 267);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(144, 194);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Забрать";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxLevels);
-            this.groupBox2.Controls.Add(this.Shep);
-            this.groupBox2.Controls.Add(this.Avianos);
+            this.groupBox2.Controls.Add(this.buttonSet);
             this.groupBox2.Location = new System.Drawing.Point(740, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(144, 237);
@@ -140,35 +117,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Уровни";
             // 
+            // listBoxLevels
+            // 
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.Location = new System.Drawing.Point(12, 19);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(120, 121);
+            this.listBoxLevels.TabIndex = 0;
+            this.listBoxLevels.Click += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBoxTakeShep);
+            this.groupBox1.Controls.Add(this.TakeOut);
+            this.groupBox1.Controls.Add(this.maskedTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(740, 255);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(144, 194);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Забрать";
+            // 
             // FormParking
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBoxParking);
+            this.Controls.Add(this.pictureBoxAvianos);
             this.Name = "FormParking";
             this.Text = "Avianosec";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvianos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeShep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Shep;
-        private System.Windows.Forms.Button Avianos;
+        private System.Windows.Forms.PictureBox pictureBoxAvianos;
+        private System.Windows.Forms.Button buttonSet;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button TakeOut;
         private System.Windows.Forms.PictureBox pictureBoxTakeShep;
         private System.Windows.Forms.PictureBox pictureBoxParking;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
+

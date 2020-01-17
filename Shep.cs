@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    class Shep : Vehicle
+    public class Shep : Vehicle
     {
-        /// Ширина отрисовки 
+        /// Ширина отрисовки автомобиля
         protected const int shepWidth = 100;
-        /// Ширина отрисовки 
+        /// Ширина отрисовки автомобиля
         protected const int shepHeight = 60;
-        // Дополнительный цвет
-        public Color MainColor { private set; get; }
         /// Конструктор
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес автомобиля</param>
