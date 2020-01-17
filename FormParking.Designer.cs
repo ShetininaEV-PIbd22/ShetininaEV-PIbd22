@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace WindowsFormsAppAvianos
+﻿namespace WindowsFormsAppAvianos
 {
     partial class FormParking
     {
@@ -31,10 +29,10 @@ namespace WindowsFormsAppAvianos
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-            this.buttonSet = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TakeOut = new System.Windows.Forms.Button();
-            this.pictureBoxTakeShep = new System.Windows.Forms.PictureBox();
+            this.buttonTakeOut = new System.Windows.Forms.Button();
+            this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,7 +45,7 @@ namespace WindowsFormsAppAvianos
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeShep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,20 +58,20 @@ namespace WindowsFormsAppAvianos
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
-            // buttonSet
+            // button2
             // 
-            this.buttonSet.Location = new System.Drawing.Point(25, 212);
-            this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(75, 23);
-            this.buttonSet.TabIndex = 2;
-            this.buttonSet.Text = "Поставить";
-            this.buttonSet.UseVisualStyleBackColor = true;
-            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
+            this.button2.Location = new System.Drawing.Point(25, 212);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Поставить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonSet_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TakeOut);
-            this.groupBox1.Controls.Add(this.pictureBoxTakeShep);
+            this.groupBox1.Controls.Add(this.buttonTakeOut);
+            this.groupBox1.Controls.Add(this.pictureBoxTakeCar);
             this.groupBox1.Controls.Add(this.maskedTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(638, 271);
@@ -83,23 +81,23 @@ namespace WindowsFormsAppAvianos
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Забрать";
             // 
-            // TakeOut
+            // buttonTakeOut
             // 
-            this.TakeOut.Location = new System.Drawing.Point(30, 45);
-            this.TakeOut.Name = "TakeOut";
-            this.TakeOut.Size = new System.Drawing.Size(75, 23);
-            this.TakeOut.TabIndex = 3;
-            this.TakeOut.Text = "Забрать";
-            this.TakeOut.UseVisualStyleBackColor = true;
-            this.TakeOut.Click += new System.EventHandler(this.buttonTake_Click);
+            this.buttonTakeOut.Location = new System.Drawing.Point(30, 45);
+            this.buttonTakeOut.Name = "buttonTakeOut";
+            this.buttonTakeOut.Size = new System.Drawing.Size(75, 23);
+            this.buttonTakeOut.TabIndex = 3;
+            this.buttonTakeOut.Text = "Забрать";
+            this.buttonTakeOut.UseVisualStyleBackColor = true;
+            this.buttonTakeOut.Click += new System.EventHandler(this.buttonTake_Click);
             // 
-            // pictureBoxTakeShep
+            // pictureBoxTakeCar
             // 
-            this.pictureBoxTakeShep.Location = new System.Drawing.Point(5, 80);
-            this.pictureBoxTakeShep.Name = "pictureBoxTakeShep";
-            this.pictureBoxTakeShep.Size = new System.Drawing.Size(148, 87);
-            this.pictureBoxTakeShep.TabIndex = 2;
-            this.pictureBoxTakeShep.TabStop = false;
+            this.pictureBoxTakeCar.Location = new System.Drawing.Point(5, 80);
+            this.pictureBoxTakeCar.Name = "pictureBoxTakeCar";
+            this.pictureBoxTakeCar.Size = new System.Drawing.Size(148, 87);
+            this.pictureBoxTakeCar.TabIndex = 2;
+            this.pictureBoxTakeCar.TabStop = false;
             // 
             // maskedTextBox
             // 
@@ -120,6 +118,7 @@ namespace WindowsFormsAppAvianos
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBoxLevels);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(643, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(145, 244);
@@ -142,7 +141,7 @@ namespace WindowsFormsAppAvianos
             this.файлToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(801, 24);
             this.menuStrip.TabIndex = 5;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -158,14 +157,14 @@ namespace WindowsFormsAppAvianos
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.saveToolStripMenuItem.Text = "Сохранить";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.openToolStripMenuItem.Text = "Загрузить";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -178,7 +177,7 @@ namespace WindowsFormsAppAvianos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(801, 461);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxParking);
@@ -189,7 +188,7 @@ namespace WindowsFormsAppAvianos
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeShep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -201,10 +200,10 @@ namespace WindowsFormsAppAvianos
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
-        private Button buttonSet;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button TakeOut;
-        private System.Windows.Forms.PictureBox pictureBoxTakeShep;
+        private System.Windows.Forms.Button buttonTakeOut;
+        private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;

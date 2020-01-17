@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsAppAvianos
 {
-    partial class FormCarConfig
+    partial class FormShepConfig
     {
         /// <summary>
         /// Обязательная переменная конструктора.

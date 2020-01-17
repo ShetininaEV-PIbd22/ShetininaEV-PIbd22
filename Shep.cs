@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
+    public enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
     class Shep : Vehicle
     {
         /// Ширина отрисовки автомобиля
