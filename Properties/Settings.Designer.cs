@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TP_laba6._1.Properties
+namespace laba_7.Properties
 {
 
 

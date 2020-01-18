@@ -42,7 +42,7 @@ namespace WindowsFormsAppAvianos
             }
         }
         //запись в файл
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             StreamWriter sw = new StreamWriter(filename);
             using (sw)
@@ -54,30 +54,33 @@ namespace WindowsFormsAppAvianos
                     sw.Write("Level" + Environment.NewLine);
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        var shep = level[i];
-                        if (shep != null)
+                        try
                         {
-                            //если место не пустое
-                            //Записываем тип мшаины
-                            if (shep.GetType().Name == "Shep")
+                            var shep = level[i];
+                            if (shep != null)
                             {
-                                sw.Write(i + ":Shep:");
+                                //если место не пустое
+                                //Записываем тип мшаины
+                                if (shep.GetType().Name == "Shep")
+                                {
+                                    sw.Write(i + ":Shep:");
+                                }
+                                if (shep.GetType().Name == "Avianos")
+                                {
+                                    sw.Write(i + ":Avianos:");
+                                }
+                                //Записываемые параметры
+                                sw.Write(shep + Environment.NewLine);
                             }
-                            if (shep.GetType().Name == "Avianos")
-                            {
-                                sw.Write(i + ":Avianos:");
-                            }
-                            //Записываемые параметры
-                            sw.Write(shep + Environment.NewLine);
                         }
+                        finally { }
                     }
                 }
             }
             sw.Close();
-            return true;
         }
         /// Загрузка нформации из файла
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             Parking<ITransport> park = null;
             StreamReader sr = new StreamReader(filename);
@@ -88,7 +91,7 @@ namespace WindowsFormsAppAvianos
                 if (strs[0] == "CountLeveles")
                 {
                     int count = int.Parse(strs[1]);
-                    parkingStages = new List<Parking<ITransport>>();
+                    parkingStages = new List<Parking<ITransport>>(count);
                     while (!sr.EndOfStream)
                     {
                         line = sr.ReadLine();
@@ -100,33 +103,32 @@ namespace WindowsFormsAppAvianos
                         }
                         if ((strs.Length == 3) && (park != null))
                         {
-                            var sss = strs[2].Split(';');
-                            if (strs[1] == "Shep" && sss.Length == 3)
+                            Console.WriteLine(park.CheckFreePlace(int.Parse(strs[0])));
+                            if (park.CheckFreePlace(int.Parse(strs[0])) == true)
                             {
-                                int n = park + new Shep(strs[2]);
+                                var sss = strs[2].Split(';');
+                                if (strs[1] == "Shep" && sss.Length == 3)
+                                {
+                                    int n = park + new Shep(strs[2]);
+                                }
+                                else if (strs[1] == "Avianos" && sss.Length == 10)
+                                {
+                                    int n = park + new Avianos(strs[2]);
+                                }
                             }
-                            else if (strs[1] == "Avianos" && sss.Length == 10)
+                            else
                             {
-                                int n = park + new Avianos(strs[2]);
+                                throw new ParkingOccupiedPlaceException(int.Parse(strs[0]));
                             }
                         }
                     }
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Неверный формат файла");
                 }
+                sr.Close();
             }
-            sr.Close();
-            return true;
-        }
-        public void clear()
-        {
-            parkingStages.Clear();
-        }
-        public int count()
-        {
-            return parkingStages.Count();
         }
     }
 }
