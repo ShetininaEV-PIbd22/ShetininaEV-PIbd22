@@ -74,16 +74,16 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // groupBox1
+            // groupBoxType
             // 
-            this.groupBox1.Controls.Add(this.labelAvianosec);
-            this.groupBox1.Controls.Add(this.labelShep);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(237, 176);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип корабля";
+            this.groupBoxType.Controls.Add(this.labelAvianosec);
+            this.groupBoxType.Controls.Add(this.labelShep);
+            this.groupBoxType.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxType.Name = "groupBox1";
+            this.groupBoxType.Size = new System.Drawing.Size(237, 176);
+            this.groupBoxType.TabIndex = 1;
+            this.groupBoxType.TabStop = false;
+            this.groupBoxType.Text = "Тип корабля";
             // 
             // labelAvianosec
             // 
@@ -395,17 +395,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonnCancel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.panelCar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonOk);
+
+            this.Controls.Add(this.groupBoxColors);
+            this.Controls.Add(this.panelShep);
+            this.Controls.Add(this.groupBoxType);
+
             this.Name = "FormCarConfig";
             this.Text = "Выбор коробля";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelDopColor_DragDrop);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.panelCar.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.groupBoxType.ResumeLayout(false);
+            this.panelShep.ResumeLayout(false);
+            this.groupBoxColors.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
