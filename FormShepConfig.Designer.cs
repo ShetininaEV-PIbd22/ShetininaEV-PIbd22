@@ -36,27 +36,27 @@
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
-            this.panelColor21 = new System.Windows.Forms.Panel();
-            this.panelColor20 = new System.Windows.Forms.Panel();
-            this.panelColor19 = new System.Windows.Forms.Panel();
-            this.panelColor18 = new System.Windows.Forms.Panel();
-            this.panelColor17 = new System.Windows.Forms.Panel();
-            this.panelColor16 = new System.Windows.Forms.Panel();
-            this.panelColor15 = new System.Windows.Forms.Panel();
-            this.panelColor14 = new System.Windows.Forms.Panel();
-            this.panelColor13 = new System.Windows.Forms.Panel();
-            this.panelColor12 = new System.Windows.Forms.Panel();
-            this.panelColor11 = new System.Windows.Forms.Panel();
-            this.panelColor10 = new System.Windows.Forms.Panel();
-            this.panelColor9 = new System.Windows.Forms.Panel();
-            this.panelColor8 = new System.Windows.Forms.Panel();
-            this.panelColor7 = new System.Windows.Forms.Panel();
-            this.panelColor6 = new System.Windows.Forms.Panel();
-            this.panelColor5 = new System.Windows.Forms.Panel();
-            this.panelColor4 = new System.Windows.Forms.Panel();
-            this.panelColor3 = new System.Windows.Forms.Panel();
-            this.panelColor2 = new System.Windows.Forms.Panel();
-            this.panelColor1 = new System.Windows.Forms.Panel();
+            this.Orange = new System.Windows.Forms.Panel();
+            this.SaddleBrown = new System.Windows.Forms.Panel();
+            this.White = new System.Windows.Forms.Panel();
+            this.DeepPink = new System.Windows.Forms.Panel();
+            this.Purple = new System.Windows.Forms.Panel();
+            this.BlueViolet = new System.Windows.Forms.Panel();
+            this.Indigo = new System.Windows.Forms.Panel();
+            this.DarkBlue = new System.Windows.Forms.Panel();
+            this.RoyalBlue = new System.Windows.Forms.Panel();
+            this.Aqua = new System.Windows.Forms.Panel();
+            this.LightSeaGreen = new System.Windows.Forms.Panel();
+            this.Turquoise = new System.Windows.Forms.Panel();
+            this.Lime = new System.Windows.Forms.Panel();
+            this.Chartreuse = new System.Windows.Forms.Panel();
+            this.ForestGreen = new System.Windows.Forms.Panel();
+            this.Yellow = new System.Windows.Forms.Panel();
+            this.OrangeRed = new System.Windows.Forms.Panel();
+            this.Red = new System.Windows.Forms.Panel();
+            this.Highlight = new System.Windows.Forms.Panel();
+            this.Gray= new System.Windows.Forms.Panel();
+            this.Black= new System.Windows.Forms.Panel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -153,27 +153,27 @@
             // 
             // groupBoxColors
             // 
-            this.groupBoxColors.Controls.Add(this.panelColor21);
-            this.groupBoxColors.Controls.Add(this.panelColor20);
-            this.groupBoxColors.Controls.Add(this.panelColor19);
-            this.groupBoxColors.Controls.Add(this.panelColor18);
-            this.groupBoxColors.Controls.Add(this.panelColor17);
-            this.groupBoxColors.Controls.Add(this.panelColor16);
-            this.groupBoxColors.Controls.Add(this.panelColor15);
-            this.groupBoxColors.Controls.Add(this.panelColor14);
-            this.groupBoxColors.Controls.Add(this.panelColor13);
-            this.groupBoxColors.Controls.Add(this.panelColor12);
-            this.groupBoxColors.Controls.Add(this.panelColor11);
-            this.groupBoxColors.Controls.Add(this.panelColor10);
-            this.groupBoxColors.Controls.Add(this.panelColor9);
-            this.groupBoxColors.Controls.Add(this.panelColor8);
-            this.groupBoxColors.Controls.Add(this.panelColor7);
-            this.groupBoxColors.Controls.Add(this.panelColor6);
-            this.groupBoxColors.Controls.Add(this.panelColor5);
-            this.groupBoxColors.Controls.Add(this.panelColor4);
-            this.groupBoxColors.Controls.Add(this.panelColor3);
-            this.groupBoxColors.Controls.Add(this.panelColor2);
-            this.groupBoxColors.Controls.Add(this.panelColor1);
+            this.groupBoxColors.Controls.Add(this.Orange);
+            this.groupBoxColors.Controls.Add(this.SaddleBrown);
+            this.groupBoxColors.Controls.Add(this.White);
+            this.groupBoxColors.Controls.Add(this.DeepPink);
+            this.groupBoxColors.Controls.Add(this.Purple);
+            this.groupBoxColors.Controls.Add(this.BlueViolet);
+            this.groupBoxColors.Controls.Add(this.Indigo);
+            this.groupBoxColors.Controls.Add(this.DarkBlue);
+            this.groupBoxColors.Controls.Add(this.RoyalBlue);
+            this.groupBoxColors.Controls.Add(this.Aqua);
+            this.groupBoxColors.Controls.Add(this.LightSeaGreen);
+            this.groupBoxColors.Controls.Add(this.Turquoise);
+            this.groupBoxColors.Controls.Add(this.Lime);
+            this.groupBoxColors.Controls.Add(this.Chartreuse);
+            this.groupBoxColors.Controls.Add(this.ForestGreen);
+            this.groupBoxColors.Controls.Add(this.Yellow);
+            this.groupBoxColors.Controls.Add(this.OrangeRed);
+            this.groupBoxColors.Controls.Add(this.Red);
+            this.groupBoxColors.Controls.Add(this.Highlight);
+            this.groupBoxColors.Controls.Add(this.Gray);
+            this.groupBoxColors.Controls.Add(this.Black);
             this.groupBoxColors.Location = new System.Drawing.Point(565, 26);
             this.groupBoxColors.Name = "groupBox2";
             this.groupBoxColors.Size = new System.Drawing.Size(223, 412);
@@ -181,194 +181,194 @@
             this.groupBoxColors.TabStop = false;
             this.groupBoxColors.Text = "Цвета";
             // 
-            // panelColor21
+            // Orange
             /Colors 
-            tColorsis.panelColor21.BackColor = System.Drawing.Color.Orange;
-            tColorsis.panelColor21.Location = new System.Drawing.Point(156, 334);
-            this.panelColor21.Name = "panel21";
-            this.panelColor21.Size = new System.Drawing.Size(51, 53);
-            this.panelColor21.TabIndex = 20;
-            this.panelColor21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            tColorsis.Orange.BackColor = System.Drawing.Color.Orange;
+            tColorsis.Orange.Location = new System.Drawing.Point(156, 334);
+            this.Orange.Name = "panel21";
+            this.Orange.Size = new System.Drawing.Size(51, 53);
+            this.Orange.TabIndex = 20;
+            this.Orange.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor20
+            // SaddleBrown
             // 
-            this.panelColor20.BackColor = System.Drawing.Color.SaddleBrown;
-            this.panelColor20.Location = new System.Drawing.Point(156, 286);
-            this.panelColor20.Name = "panel20";
-            this.panelColor20.Size = new System.Drawing.Size(51, 42);
-            this.panelColor20.TabIndex = 19;
-            this.panelColor20.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.SaddleBrown.BackColor = System.Drawing.Color.SaddleBrown;
+            this.SaddleBrown.Location = new System.Drawing.Point(156, 286);
+            this.SaddleBrown.Name = "panel20";
+            this.SaddleBrown.Size = new System.Drawing.Size(51, 42);
+            this.SaddleBrown.TabIndex = 19;
+            this.SaddleBrown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panel19
+            // White
             // 
-            this.panelColor19.BackColor = System.Drawing.Color.White;
-            this.panelColor19.Location = new System.Drawing.Point(156, 233);
-            this.panelColor19.Name = "panel19";
-            this.panelColor19.Size = new System.Drawing.Size(51, 47);
-            this.panelColor19.TabIndex = 18;
-            this.panelColor19.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.White.BackColor = System.Drawing.Color.White;
+            this.White.Location = new System.Drawing.Point(156, 233);
+            this.White.Name = "panel19";
+            this.White.Size = new System.Drawing.Size(51, 47);
+            this.White.TabIndex = 18;
+            this.White.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor18
+            // DeepPink
             // 
-            this.panelColor18.BackColor = System.Drawing.Color.DeepPink;
-            this.panelColor18.Location = new System.Drawing.Point(156, 181);
-            this.panelColor18.Name = "panel18";
-            this.panelColor18.Size = new System.Drawing.Size(51, 46);
-            this.panelColor18.TabIndex = 17;
-            this.panelColor18.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.DeepPink.BackColor = System.Drawing.Color.DeepPink;
+            this.DeepPink.Location = new System.Drawing.Point(156, 181);
+            this.DeepPink.Name = "panel18";
+            this.DeepPink.Size = new System.Drawing.Size(51, 46);
+            this.DeepPink.TabIndex = 17;
+            this.DeepPink.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor17
+            // Purple
             // 
-            this.panelColor17.BackColor = System.Drawing.Color.Purple;
-            this.panelColor17.Location = new System.Drawing.Point(156, 131);
-            this.panelColor17.Name = "panel17";
-            this.panelColor17.Size = new System.Drawing.Size(51, 44);
-            this.panelColor17.TabIndex = 16;
-            this.panelColor17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Purple.BackColor = System.Drawing.Color.Purple;
+            this.Purple.Location = new System.Drawing.Point(156, 131);
+            this.Purple.Name = "panel17";
+            this.Purple.Size = new System.Drawing.Size(51, 44);
+            this.Purple.TabIndex = 16;
+            this.Purple.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor16
+            // BlueViolet
             // 
-            this.panelColor16.BackColor = System.Drawing.Color.BlueViolet;
-            this.panelColor16.Location = new System.Drawing.Point(156, 83);
-            this.panelColor16.Name = "panel16";
-            this.panelColor16.Size = new System.Drawing.Size(51, 42);
-            this.panelColor16.TabIndex = 15;
-            this.panelColor16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.BlueViolet.BackColor = System.Drawing.Color.BlueViolet;
+            this.BlueViolet.Location = new System.Drawing.Point(156, 83);
+            this.BlueViolet.Name = "panel16";
+            this.BlueViolet.Size = new System.Drawing.Size(51, 42);
+            this.BlueViolet.TabIndex = 15;
+            this.BlueViolet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor15
+            // Indigo
             // 
-            this.panelColor15.BackColor = System.Drawing.Color.Indigo;
-            this.panelColor15.Location = new System.Drawing.Point(156, 31);
-            this.panelColor15.Name = "panel15";
-            this.panelColor15.Size = new System.Drawing.Size(51, 46);
-            this.panelColor15.TabIndex = 14;
-            this.panelColor15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Indigo.BackColor = System.Drawing.Color.Indigo;
+            this.Indigo.Location = new System.Drawing.Point(156, 31);
+            this.Indigo.Name = "panel15";
+            this.Indigo.Size = new System.Drawing.Size(51, 46);
+            this.Indigo.TabIndex = 14;
+            this.Indigo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor14
+            // DarkBlue
             // 
-            this.panelColor14.BackColor = System.Drawing.Color.DarkBlue;
-            this.panelColor14.Location = new System.Drawing.Point(89, 337);
-            this.panelColor14.Name = "panel14";
-            this.panelColor14.Size = new System.Drawing.Size(47, 50);
-            this.panelColor14.TabIndex = 13;
-            this.panelColor14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.DarkBlue.BackColor = System.Drawing.Color.DarkBlue;
+            this.DarkBlue.Location = new System.Drawing.Point(89, 337);
+            this.DarkBlue.Name = "panel14";
+            this.DarkBlue.Size = new System.Drawing.Size(47, 50);
+            this.DarkBlue.TabIndex = 13;
+            this.DarkBlue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor13
+            // RoyalBlue
             // 
-            this.panelColor13.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panelColor13.Location = new System.Drawing.Point(89, 286);
-            this.panelColor13.Name = "panel13";
-            this.panelColor13.Size = new System.Drawing.Size(47, 43);
-            this.panelColor13.TabIndex = 12;
-            this.panelColor13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.RoyalBlue.BackColor = System.Drawing.Color.RoyalBlue;
+            this.RoyalBlue.Location = new System.Drawing.Point(89, 286);
+            this.RoyalBlue.Name = "panel13";
+            this.RoyalBlue.Size = new System.Drawing.Size(47, 43);
+            this.RoyalBlue.TabIndex = 12;
+            this.RoyalBlue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor12
+            // Aqua
             // 
-            this.panelColor12.BackColor = System.Drawing.Color.Aqua;
-            this.panelColor12.Location = new System.Drawing.Point(89, 233);
-            this.panelColor12.Name = "panel12";
-            this.panelColor12.Size = new System.Drawing.Size(47, 47);
-            this.panelColor12.TabIndex = 11;
-            this.panelColor12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Aqua.BackColor = System.Drawing.Color.Aqua;
+            this.Aqua.Location = new System.Drawing.Point(89, 233);
+            this.Aqua.Name = "panel12";
+            this.Aqua.Size = new System.Drawing.Size(47, 47);
+            this.Aqua.TabIndex = 11;
+            this.Aqua.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor11
+            // LightSeaGreen
             // 
-            this.panelColor11.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panelColor11.Location = new System.Drawing.Point(89, 181);
-            this.panelColor11.Name = "panel11";
-            this.panelColor11.Size = new System.Drawing.Size(47, 46);
-            this.panelColor11.TabIndex = 10;
-            this.panelColor11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.LightSeaGreen.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.LightSeaGreen.Location = new System.Drawing.Point(89, 181);
+            this.LightSeaGreen.Name = "panel11";
+            this.LightSeaGreen.Size = new System.Drawing.Size(47, 46);
+            this.LightSeaGreen.TabIndex = 10;
+            this.LightSeaGreen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor10
+            // Turquoise
             // 
-            this.panelColor10.BackColor = System.Drawing.Color.Turquoise;
-            this.panelColor10.Location = new System.Drawing.Point(89, 132);
-            this.panelColor10.Name = "panel10";
-            this.panelColor10.Size = new System.Drawing.Size(47, 43);
-            this.panelColor10.TabIndex = 9;
-            this.panelColor10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Turquoise.BackColor = System.Drawing.Color.Turquoise;
+            this.Turquoise.Location = new System.Drawing.Point(89, 132);
+            this.Turquoise.Name = "panel10";
+            this.Turquoise.Size = new System.Drawing.Size(47, 43);
+            this.Turquoise.TabIndex = 9;
+            this.Turquoise.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor9
+            // Lime
             // 
-            this.panelColor9.BackColor = System.Drawing.Color.Lime;
-            this.panelColor9.Location = new System.Drawing.Point(89, 83);
-            this.panelColor9.Name = "panel9";
-            this.panelColor9.Size = new System.Drawing.Size(46, 42);
-            this.panelColor9.TabIndex = 8;
-            this.panelColor9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Lime.BackColor = System.Drawing.Color.Lime;
+            this.Lime.Location = new System.Drawing.Point(89, 83);
+            this.Lime.Name = "panel9";
+            this.Lime.Size = new System.Drawing.Size(46, 42);
+            this.Lime.TabIndex = 8;
+            this.Lime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor8
+            // Chartreuse
             // 
-            this.panelColor8.BackColor = System.Drawing.Color.Chartreuse;
-            this.panelColor8.Location = new System.Drawing.Point(89, 33);
-            this.panelColor8.Name = "panel8";
-            this.panelColor8.Size = new System.Drawing.Size(46, 44);
-            this.panelColor8.TabIndex = 7;
-            this.panelColor8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Chartreuse.BackColor = System.Drawing.Color.Chartreuse;
+            this.Chartreuse.Location = new System.Drawing.Point(89, 33);
+            this.Chartreuse.Name = "panel8";
+            this.Chartreuse.Size = new System.Drawing.Size(46, 44);
+            this.Chartreuse.TabIndex = 7;
+            this.Chartreuse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor7
+            // ForestGreen
             // 
-            this.panelColor7.BackColor = System.Drawing.Color.ForestGreen;
-            this.panelColor7.Location = new System.Drawing.Point(17, 337);
-            this.panelColor7.Name = "panel7";
-            this.panelColor7.Size = new System.Drawing.Size(47, 50);
-            this.panelColor7.TabIndex = 6;
-            this.panelColor7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.ForestGreen.BackColor = System.Drawing.Color.ForestGreen;
+            this.ForestGreen.Location = new System.Drawing.Point(17, 337);
+            this.ForestGreen.Name = "panel7";
+            this.ForestGreen.Size = new System.Drawing.Size(47, 50);
+            this.ForestGreen.TabIndex = 6;
+            this.ForestGreen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor6
+            // Yellow
             // 
-            this.panelColor6.BackColor = System.Drawing.Color.Yellow;
-            this.panelColor6.Location = new System.Drawing.Point(17, 286);
-            this.panelColor6.Name = "panel6";
-            this.panelColor6.Size = new System.Drawing.Size(47, 43);
-            this.panelColor6.TabIndex = 5;
-            this.panelColor6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Yellow.BackColor = System.Drawing.Color.Yellow;
+            this.Yellow.Location = new System.Drawing.Point(17, 286);
+            this.Yellow.Name = "panel6";
+            this.Yellow.Size = new System.Drawing.Size(47, 43);
+            this.Yellow.TabIndex = 5;
+            this.Yellow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor5
+            // OrangeRed
             // 
-            this.panelColor5.BackColor = System.Drawing.Color.OrangeRed;
-            this.panelColor5.Location = new System.Drawing.Point(17, 233);
-            this.panelColor5.Name = "panel5";
-            this.panelColor5.Size = new System.Drawing.Size(47, 47);
-            this.panelColor5.TabIndex = 4;
-            this.panelColor5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.OrangeRed.BackColor = System.Drawing.Color.OrangeRed;
+            this.OrangeRed.Location = new System.Drawing.Point(17, 233);
+            this.OrangeRed.Name = "panel5";
+            this.OrangeRed.Size = new System.Drawing.Size(47, 47);
+            this.OrangeRed.TabIndex = 4;
+            this.OrangeRed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor4
+            // Red
             // 
-            this.panelColor4.BackColor = System.Drawing.Color.Red;
-            this.panelColor4.Location = new System.Drawing.Point(17, 181);
-            this.panelColor4.Name = "panel4";
-            this.panelColor4.Size = new System.Drawing.Size(47, 46);
-            this.panelColor4.TabIndex = 3;
-            this.panelColor4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Red.BackColor = System.Drawing.Color.Red;
+            this.Red.Location = new System.Drawing.Point(17, 181);
+            this.Red.Name = "panel4";
+            this.Red.Size = new System.Drawing.Size(47, 46);
+            this.Red.TabIndex = 3;
+            this.Red.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor3
+            // Highlight
             // 
-            this.panelColor3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panelColor3.Location = new System.Drawing.Point(17, 131);
-            this.panelColor3.Name = "panel3";
-            this.panelColor3.Size = new System.Drawing.Size(47, 44);
-            this.panelColor3.TabIndex = 2;
-            this.panelColor3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Highlight.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Highlight.Location = new System.Drawing.Point(17, 131);
+            this.Highlight.Name = "panel3";
+            this.Highlight.Size = new System.Drawing.Size(47, 44);
+            this.Highlight.TabIndex = 2;
+            this.Highlight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor2
+            // Gray
             // 
-            this.panelColor2.BackColor = System.Drawing.Color.Gray;
-            this.panelColor2.Location = new System.Drawing.Point(17, 83);
-            this.panelColor2.Name = "panel2";
-            this.panelColor2.Size = new System.Drawing.Size(47, 42);
-            this.panelColor2.TabIndex = 1;
-            this.panelColor2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Gray.BackColor = System.Drawing.Color.Gray;
+            this.Gray.Location = new System.Drawing.Point(17, 83);
+            this.Gray.Name = "panel2";
+            this.Gray.Size = new System.Drawing.Size(47, 42);
+            this.Gray.TabIndex = 1;
+            this.Gray.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelColor1
+            // Black
             // 
-            this.panelColor1.BackColor = System.Drawing.Color.Black;
-            this.panelColor1.Location = new System.Drawing.Point(17, 31);
-            this.panelColor1.Name = "panel1";
-            this.panelColor1.Size = new System.Drawing.Size(47, 46);
-            this.panelColor1.TabIndex = 0;
-            this.panelColor1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.Black.BackColor = System.Drawing.Color.Black;
+            this.Black.Location = new System.Drawing.Point(17, 31);
+            this.Black.Name = "panel1";
+            this.Black.Size = new System.Drawing.Size(47, 46);
+            this.Black.TabIndex = 0;
+            this.Black.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
             // buttonOk
             // 
@@ -419,27 +419,27 @@
         private System.Windows.Forms.Panel panelShep;
         private System.Windows.Forms.Label labelBaseColor;
         private System.Windows.Forms.GroupBox groupBoxColors;
-        private System.Windows.Forms.Panel panelColor21;
-        private System.Windows.Forms.Panel panelColor20;
-        private System.Windows.Forms.Panel panelColor19;
-        private System.Windows.Forms.Panel panelColor18;
-        private System.Windows.Forms.Panel panelColor17;
-        private System.Windows.Forms.Panel panelColor16;
-        private System.Windows.Forms.Panel panelColor15;
-        private System.Windows.Forms.Panel panelColor14;
-        private System.Windows.Forms.Panel panelColor13;
-        private System.Windows.Forms.Panel panelColor12;
-        private System.Windows.Forms.Panel panelColor11;
-        private System.Windows.Forms.Panel panelColor10;
-        private System.Windows.Forms.Panel panelColor9;
-        private System.Windows.Forms.Panel panelColor8;
-        private System.Windows.Forms.Panel panelColor7;
-        private System.Windows.Forms.Panel panelColor6;
-        private System.Windows.Forms.Panel panelColor5;
-        private System.Windows.Forms.Panel panelColor4;
-        private System.Windows.Forms.Panel panelColor3;
-        private System.Windows.Forms.Panel panelColor2;
-        private System.Windows.Forms.Panel panelColor1;
+        private System.Windows.Forms.Panel Orange;
+        private System.Windows.Forms.Panel SaddleBrown;
+        private System.Windows.Forms.Panel White;
+        private System.Windows.Forms.Panel DeepPink;
+        private System.Windows.Forms.Panel Purple;
+        private System.Windows.Forms.Panel BlueViolet;
+        private System.Windows.Forms.Panel Indigo;
+        private System.Windows.Forms.Panel DarkBlue;
+        private System.Windows.Forms.Panel RoyalBlue;
+        private System.Windows.Forms.Panel Aqua;
+        private System.Windows.Forms.Panel LightSeaGreen;
+        private System.Windows.Forms.Panel Turquoise;
+        private System.Windows.Forms.Panel Lime;
+        private System.Windows.Forms.Panel Chartreuse;
+        private System.Windows.Forms.Panel ForestGreen;
+        private System.Windows.Forms.Panel Yellow;
+        private System.Windows.Forms.Panel OrangeRed;
+        private System.Windows.Forms.Panel Red;
+        private System.Windows.Forms.Panel Highlight;
+        private System.Windows.Forms.Panel Gray;
+        private System.Windows.Forms.Panel Black;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonnCancel;
         private System.Windows.Forms.Label labelDopColor;
