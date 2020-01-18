@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{28FA48C8-9485-42D1-B0CC-06B089E20ACA}</ProjectGuid>
+    <ProjectGuid>{FA92DF00-8922-48E0-8D12-B79BD19249E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsAppAvianos</RootNamespace>
-    <AssemblyName>WindowsFormsAppAvianos</AssemblyName>
+    <RootNamespace>TP_laba6._1</RootNamespace>
+    <AssemblyName>TP_laba6.1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,17 +48,17 @@
   <ItemGroup>
     <Compile Include="Avianos.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="FormParking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormParking.designer.cs">
-      <DependentUpon>FormParking.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormShepConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormShepConfig.designer.cs">
+    <Compile Include="FormShepConfig.Designer.cs">
       <DependentUpon>FormShepConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParking.Designer.cs">
+      <DependentUpon>FormParking.cs</DependentUpon>
     </Compile>
     <Compile Include="ITransport.cs" />
     <Compile Include="MultiLevelParking.cs" />
@@ -67,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shep.cs" />
     <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="FormShepConfig.resx">
+      <DependentUpon>FormShepConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormParking.resx">
       <DependentUpon>FormParking.cs</DependentUpon>
     </EmbeddedResource>
