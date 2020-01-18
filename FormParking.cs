@@ -13,6 +13,9 @@ namespace WindowsFormsAppAvianos
     public partial class FormParking : Form
     {
         MultiLevelParking parking;
+        /// Форма для добавления
+        FormShepConfig form;
+        // Количество уровней-парковок 
         private const int countLevel = 5;
         public FormParking()
         {
@@ -39,20 +42,7 @@ namespace WindowsFormsAppAvianos
         }
         private void buttonSetShep_Click(object sender, EventArgs e)
         {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var shep = new Shep(100, 1000, dialog.Color);
-                    int place = parking[listBoxLevels.SelectedIndex] + shep;
-                    if (place == -1)
-                    {
-                        MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    Draw();
-                }
-            }
+
         }
         private void buttonSetAvianos_Click(object sender, EventArgs e)
         {
@@ -81,13 +71,13 @@ namespace WindowsFormsAppAvianos
             {
                 if (maskedTextBox.Text != "")
                 {
-                    var shep = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox.Text);
-                    if (shep != null)
+                    var car = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox.Text);
+                    if (car != null)
                     {
                         Bitmap bmp = new Bitmap(pictureBoxTakeShep.Width, pictureBoxTakeShep.Height);
                         Graphics gr = Graphics.FromImage(bmp);
-                        shep.SetPosition(15, 5, pictureBoxTakeShep.Width, pictureBoxTakeShep.Height);
-                        shep.DrawShep(gr);
+                        car.SetPosition(15, 5, pictureBoxTakeShep.Width, pictureBoxTakeShep.Height);
+                        car.DrawShep(gr);
                         pictureBoxTakeShep.Image = bmp;
                     }
                     else
@@ -102,6 +92,28 @@ namespace WindowsFormsAppAvianos
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+        }
+        private void buttonSet_Click(object sender, EventArgs e)
+        {
+            form = new FormShepConfig();
+            form.AddEvent(AddShep);
+            form.Show();
+        }
+        /// Метод добавления 
+        private void AddShep(ITransport shep)
+        {
+            if (shep != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + shep;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось поставить");
+                }
+            }
         }
     }
 }

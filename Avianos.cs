@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    class Avianos : Shep
+    public class Avianos : Shep
     {
         public Color DopColor { private set; get; }
         // Признак наличия переднего лифтов
@@ -60,6 +60,10 @@ namespace WindowsFormsAppAvianos
             {
                 g.DrawLine(pen, _startPosX + 20, _startPosY + 15, _startPosX + 40, _startPosY + 15);
             }
+        }
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
         }
     }
 }
