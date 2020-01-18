@@ -36,8 +36,10 @@
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
+
             this.Orange = new System.Windows.Forms.Panel();
             this.SaddleBrown = new System.Windows.Forms.Panel();
+
             this.White = new System.Windows.Forms.Panel();
             this.DeepPink = new System.Windows.Forms.Panel();
             this.Purple = new System.Windows.Forms.Panel();
@@ -48,14 +50,18 @@
             this.Aqua = new System.Windows.Forms.Panel();
             this.LightSeaGreen = new System.Windows.Forms.Panel();
             this.Turquoise = new System.Windows.Forms.Panel();
+
             this.Lime = new System.Windows.Forms.Panel();
+
             this.Chartreuse = new System.Windows.Forms.Panel();
             this.ForestGreen = new System.Windows.Forms.Panel();
             this.Yellow = new System.Windows.Forms.Panel();
             this.OrangeRed = new System.Windows.Forms.Panel();
             this.Red = new System.Windows.Forms.Panel();
+
             this.Highlight = new System.Windows.Forms.Panel();
             this.Gray= new System.Windows.Forms.Panel();
+
             this.Black= new System.Windows.Forms.Panel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonnCancel = new System.Windows.Forms.Button();
@@ -176,15 +182,19 @@
             this.groupBoxColors.Controls.Add(this.Black);
             this.groupBoxColors.Location = new System.Drawing.Point(565, 26);
             this.groupBoxColors.Name = "groupBox2";
+
             this.groupBoxColors.Size = new System.Drawing.Size(223, 412);
+
             this.groupBoxColors.TabIndex = 3;
             this.groupBoxColors.TabStop = false;
             this.groupBoxColors.Text = "Цвета";
             // 
             // Orange
+
             /Colors 
             tColorsis.Orange.BackColor = System.Drawing.Color.Orange;
             tColorsis.Orange.Location = new System.Drawing.Point(156, 334);
+
             this.Orange.Name = "panel21";
             this.Orange.Size = new System.Drawing.Size(51, 53);
             this.Orange.TabIndex = 20;
@@ -396,9 +406,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonnCancel);
             this.Controls.Add(this.buttonOk);
+
             this.Controls.Add(this.groupBoxColors);
             this.Controls.Add(this.panelShep);
             this.Controls.Add(this.groupBoxType);
+
             this.Name = "FormCarConfig";
             this.Text = "Выбор коробля";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelDopColor_DragDrop);
