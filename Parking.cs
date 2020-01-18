@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,14 +8,31 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppAvianos
 {
-    public class Parking<T> where T : class, ITransport
+    public class Parking<T> : IEnumerator<T>, IEnumerable<T>, IComparable<Parking<T>> where T : class, ITransport
     {
+        /// Массив объектов, которые храним
         private Dictionary<int, T> _places;
+        /// Максимальное количество мест на парковке
         private int _maxCount;
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
+        /// Размер парковочного места (ширина)
         private const int _placeSizeWidth = 210;
+        /// Размер парковочного места (высота)
         private const int _placeSizeHeight = 55;
+        
+        /// Текущий элемент для вывода через IEnumerator (будет обращаться по своему 
+        /// индексу к ключу словаря, по которму будет возвращаться запись)
+        private int _currentIndex;
+        
+        /// Получить порядковое место на парковке
+        public int GetKey
+        {
+            get
+            {
+                return _places.Keys.ToList()[_currentIndex];
+            }
+        }
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
@@ -28,7 +46,11 @@ namespace WindowsFormsAppAvianos
             {
                 //место на парковке переполнено
                 throw new ParkingOverflowException();
-            } 
+            }
+            if (p._places.ContainsValue(car))
+            {
+                throw new ParkingAlreadyHaveException();
+            }
             for (int i = 0; i < p._maxCount; i++) 
             {
                 if (p.CheckFreePlace(i))
@@ -44,9 +66,9 @@ namespace WindowsFormsAppAvianos
         {
             if (!p.CheckFreePlace(index)) 
             {
-                T shep = p._places[index];
+                T car = p._places[index];
                 p._places.Remove(index); 
-                return shep; 
+                return car; 
             }
             //Не найден автомобиль по месту
             throw new ParkingNotFoundException(index);
@@ -106,6 +128,95 @@ namespace WindowsFormsAppAvianos
                 }
             }
         }
-
+        /// Метод интерфейса IEnumerator для получения текущего элемента
+        public T Current
+        {
+            get
+            {
+                return _places[_places.Keys.ToList()[_currentIndex]];
+            }
+        }
+        /// Метод интерфейса IEnumerator для получения текущего элемента
+        object IEnumerator.Current
+        {
+            get
+            {
+                return Current;
+            }
+        }
+        /// Метод интерфейса IEnumerator, вызываемый при удалении объекта
+        public void Dispose()
+        {
+        
+        }
+        /// Метод интерфейса IEnumerator для перехода к следующему элементу или началу коллекции
+        public bool MoveNext()
+        {
+            if (_currentIndex + 1 >= _places.Count)
+            {
+                Reset();
+                return false;
+            }
+            _currentIndex++;
+            return true;
+        }
+        /// Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
+        public void Reset()
+        {
+            _currentIndex = -1;
+        }
+        /// Метод интерфейса IEnumerable
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this;
+        }
+        /// Метод интерфейса IEnumerable
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+        /// Метод интерфейса IComparable
+        public int CompareTo(Parking<T> other)
+        {
+            if (_places.Count > other._places.Count)
+            {
+                return -1;
+            }
+            else if (_places.Count < other._places.Count)
+            {
+                return 1;
+            }
+            else if (_places.Count > 0)
+            {
+                var thisKeys = _places.Keys.ToList();
+                var otherKeys = other._places.Keys.ToList();
+                for (int i = 0; i < _places.Count; ++i)
+                {
+                    if (_places[thisKeys[i]] is Shep && other._places[thisKeys[i]] is
+                   Avianos)
+                    {
+                        return 1;
+                    }
+                    if (_places[thisKeys[i]] is Avianos && other._places[thisKeys[i]]
+                    is Shep)
+                    {
+                        return -1;
+                    }
+                    if (_places[thisKeys[i]] is Shep && other._places[thisKeys[i]] is
+                    Shep)
+                    {
+                        return (_places[thisKeys[i]] is
+                       Shep).CompareTo(other._places[thisKeys[i]] is Shep);
+                    }
+                    if (_places[thisKeys[i]] is Avianos && other._places[thisKeys[i]]
+                    is Avianos)
+                    {
+                        return (_places[thisKeys[i]] is
+                       Avianos).CompareTo(other._places[thisKeys[i]] is Avianos);
+                    }
+                }
+            }
+            return 0;
+        }
     }
 }

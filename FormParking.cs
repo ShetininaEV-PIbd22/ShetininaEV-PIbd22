@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NLog;
-
 
 namespace WindowsFormsAppAvianos
 {
@@ -20,11 +19,11 @@ namespace WindowsFormsAppAvianos
         // Количество уровней-парковок 
         private const int countLevel = 5;
         /// Логгер
-        private Logger logger;
+       private Logger logger; 
         public FormParking()
         {
             InitializeComponent();
-            logger = LogManager.GetCurrentClassLogger();
+            logger =LogManager.GetCurrentClassLogger();
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width, pictureBoxParking.Height);
             //заполнение listBox
             for (int i = 0; i < countLevel; i++)
@@ -50,41 +49,6 @@ namespace WindowsFormsAppAvianos
                 Graphics gr = Graphics.FromImage(bmp);
                 gr.Clear(Color.White);
                 pictureBoxParking.Image = bmp;
-            }
-        }
-        private void buttonTake_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                if (maskedTextBox.Text != "")
-                {
-                    try
-                    {
-                        var shep = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox.Text);
-                        Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
-                        Graphics gr = Graphics.FromImage(bmp);
-                        shep.SetPosition(15, 5, pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
-                        shep.DrawShep(gr);
-                        pictureBoxTakeCar.Image = bmp;
-                        logger.Info("Изъят корабль " + shep.ToString() + " с места " + maskedTextBox.Text);
-                        Draw();
-                    }
-                    catch (ParkingNotFoundException ex)
-                    {
-                        MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
-                        logger.Error("Не найден корабль по месту " + maskedTextBox.Text);
-                        Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width,
-                        pictureBoxTakeCar.Height);
-                        pictureBoxTakeCar.Image = bmp;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Неизвестная ошибка",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        logger.Error("Неизвестная ошибка");
-                    }
-                }
             }
         }
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,11 +79,52 @@ namespace WindowsFormsAppAvianos
                    MessageBoxIcon.Error);
                     logger.Error("Переполнение");
                 }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                    logger.Error("Есть такой");
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     logger.Error("Неизвестная ошибка");
+                }
+            }
+        }
+        private void buttonTake_Click(object sender, EventArgs e)
+        {
+            if (listBoxLevels.SelectedIndex > -1)
+            {
+                if (maskedTextBox.Text != "")
+                {
+                    try
+                    {
+                        var shep = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBox.Text);
+                        Bitmap bmp = new Bitmap(pictureBoxTakeShep.Width, pictureBoxTakeShep.Height);
+                        Graphics gr = Graphics.FromImage(bmp);
+                        shep.SetPosition(15, 5, pictureBoxTakeShep.Width, pictureBoxTakeShep.Height);
+                        shep.DrawShep(gr);
+                        pictureBoxTakeShep.Image = bmp;
+                        logger.Info("Изъят корабль " + shep.ToString() + " с места " + maskedTextBox.Text);
+                        Draw();
+                    }
+                    catch (ParkingNotFoundException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                        logger.Error("Не найден корабль по месту " + maskedTextBox.Text);
+                        Bitmap bmp = new Bitmap(pictureBoxTakeShep.Width,
+                        pictureBoxTakeShep.Height);
+                        pictureBoxTakeShep.Image = bmp;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Неизвестная ошибка",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        logger.Error("Неизвестная ошибка");
+                    }
                 }
             }
         }
@@ -169,6 +174,12 @@ namespace WindowsFormsAppAvianos
                 Draw();
             }
         }
+        /// Обработка нажатия кнопки "Сортировка"
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }
     }
-      
 }

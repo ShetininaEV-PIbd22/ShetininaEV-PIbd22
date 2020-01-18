@@ -16,7 +16,6 @@ namespace WindowsFormsAppAvianos
         void DrawShep(Graphics g);
         /// Смена основного цвета корабля
         void SetMainColor(Color color);
-
         String GetMainColor();
     }
 }
